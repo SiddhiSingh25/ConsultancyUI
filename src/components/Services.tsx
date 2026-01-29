@@ -2,7 +2,7 @@ import { services } from "../data/services-data";
 
 export default function Services() {
   return (
-    <section className="py-8 px-6 md:px-16 lg:px-24 xl:px-24">
+    <section className="py-8 px-4 md:px-16 lg:px-24 xl:px-24">
       <h1 className="text-3xl text-primary-800 font-semibold text-center">
         Our Services
       </h1>

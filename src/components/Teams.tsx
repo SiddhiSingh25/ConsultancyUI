@@ -8,7 +8,7 @@ import { teamMembers } from "../data/teams-data.js";
 
 export default function Teams() {
   return (
-    <section className="py-16 px-4">
+    <section className="py-16 px-6">
       <h1 className="text-3xl font-medium text-primary-800 text-center">
         Meet Our Team
       </h1>

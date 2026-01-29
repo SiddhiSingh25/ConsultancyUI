@@ -9,7 +9,7 @@ export default function Contact() {
         * { font-family: "Poppins", sans-serif; }
       `}</style>
 
-      <section className="relative bg-white flex flex-col md:flex-row justify-center px-4 py-20 gap-20">
+      <section className="relative bg-white flex flex-col md:flex-row justify-center px-0 md:px-16 lg:px-24 xl:px-24 py-20 gap-20">
 
         {/* Background Blur Circle */}
         <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none mb-10 w-[140px] h-[140px] bg-primary-900 rounded-full blur-[200px]"></div>
@@ -38,7 +38,7 @@ export default function Contact() {
         </div>
 
         {/* Right Form */}
-        <div className="w-full max-w-lg max-md:mx-auto bg-primary-100/0 backdrop-blur-sm border border-white/10 rounded-xl p-8">
+        <div className="w-full max-w-lg max-md:mx-auto bg-primary-100/0 backdrop-blur-sm border border-white/10 rounded-xl p-4">
           <form className="space-y-6">
             {/* Name */}
             <div>

@@ -11,7 +11,7 @@ const About = () => {
             <p className="text-sm text-primary-600 text-center mt-2 max-w-md mx-auto">
                 Providing expert accounting, taxation, and advisory services.
             </p>
-            <section className="py-12 px-6 md:px-16 lg:px-24 xl:px-24 flex flex-col md:flex-row items-center justify-center gap-10">
+            <section className="py-12 px-4 md:px-16 lg:px-24 xl:px-24 flex flex-col md:flex-row items-center justify-center gap-10">
 
 
 
