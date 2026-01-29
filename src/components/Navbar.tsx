@@ -72,16 +72,12 @@ export default function Navbar() {
                 {/* Mobile Menu */}
                 <div className={`absolute top-[70px] left-0 w-full bg-white p-6 md:hidden transition-all ${isMobileMenuOpen ? "block" : "hidden"}`}>
                     <ul className="flex flex-col space-y-4 text-lg">
-                        <li><Link href="#" className="text-sm">Home</Link></li>
-                        <li><Link href="#" className="text-sm">About us</Link></li>
-                        <li><Link href="#" className="text-sm">Our Services</Link></li>
-                        <li><Link href="#" className="text-sm">Registration & License
-                        </Link></li>
-                        <li><Link href="#" className="text-sm">Blogs</Link></li>
-                        <li><Link href="#" className="text-sm">Careers
-
-                        </Link></li>
-                        <li><Link href="#" className="text-sm">Contact Us</Link></li>
+                        <li><Link href="/" className="text-sm">Home</Link></li>
+                        <li><Link href="/about" className="text-sm">About us</Link></li>
+                        <li><Link href="/services" className="text-sm">Our Services</Link></li>
+                        <li><Link href="/faq" className="text-sm">FAQ's</Link></li>
+                        <li><Link href="/teams" className="text-sm">Teams</Link></li>
+                        <li><Link href="/contact" className="text-sm">Contact Us</Link></li>
 
                     </ul>
 
