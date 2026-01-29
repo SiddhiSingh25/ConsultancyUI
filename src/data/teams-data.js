@@ -1,17 +1,17 @@
 export const teamMembers = [
-  {
+    {
     id: 1,
-    name: "Vikas Gaur",
-    role: "Senior Partner",
-    image: "/images/teams/vikas_gaur.png",
-    bio: "Chartered Accountant with 15+ years of experience in accounting, taxation, audit, and Ind AS advisory.",
-  },
-  {
-    id: 2,
     name: "Sachin Sharma",
     role: "Founder & Managing Partner",
     image: "/images/teams/sachin_sharma.png",
     bio: "Chartered Accountant with 5+ years of experience advising startups and MSMEs on growth and strategy.",
+  },
+  {
+    id: 2,
+    name: "Vikas Gaur",
+    role: "Senior Partner",
+    image: "/images/teams/vikas_gaur.png",
+    bio: "Chartered Accountant with 15+ years of experience in accounting, taxation, audit, and Ind AS advisory.",
   },
   {
     id: 3,

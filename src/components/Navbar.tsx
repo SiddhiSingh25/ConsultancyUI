@@ -69,7 +69,7 @@ export default function Navbar() {
                     </svg>
                 </button>
 
-                {/* Mobile Menu */}
+                {/* Mobile Menu
                 <div className={`absolute top-[70px] left-0 w-full bg-white p-6 md:hidden transition-all ${isMobileMenuOpen ? "block" : "hidden"}`}>
                     <ul className="flex flex-col space-y-4 text-lg">
                         <li><Link href="/" className="text-sm">Home</Link></li>
@@ -81,7 +81,33 @@ export default function Navbar() {
 
                     </ul>
 
+                </div> */}
+
+
+                {/* Mobile Menu */}
+                <div className={`absolute top-[70px] left-0 w-full bg-white p-6 md:hidden transition-all ${isMobileMenuOpen ? "block" : "hidden"}`}>
+                    <ul className="flex flex-col space-y-4 text-lg">
+                        <li>
+                            <Link href="/" className="text-sm" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
+                        </li>
+                        <li>
+                            <Link href="/about" className="text-sm" onClick={() => setIsMobileMenuOpen(false)}>About us</Link>
+                        </li>
+                        <li>
+                            <Link href="/services" className="text-sm" onClick={() => setIsMobileMenuOpen(false)}>Our Services</Link>
+                        </li>
+                        <li>
+                            <Link href="/faq" className="text-sm" onClick={() => setIsMobileMenuOpen(false)}>FAQ's</Link>
+                        </li>
+                        <li>
+                            <Link href="/teams" className="text-sm" onClick={() => setIsMobileMenuOpen(false)}>Teams</Link>
+                        </li>
+                        <li>
+                            <Link href="/contact" className="text-sm" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</Link>
+                        </li>
+                    </ul>
                 </div>
+
             </nav>
         </>
     );
