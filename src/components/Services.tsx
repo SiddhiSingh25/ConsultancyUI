@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { services } from "../data/services-data";
 
 export default function Services() {
@@ -22,9 +23,9 @@ export default function Services() {
             </div>
 
             <div className="space-y-2">
-              <h3 className="text-base font-semibold text-slate-700">
+              <Link href={`/service/${id}`} className="text-base font-semibold text-slate-700">
                 {title}
-              </h3>
+              </Link>
               <p className="text-sm text-slate-600">
                 {description}
               </p>
