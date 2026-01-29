@@ -27,7 +27,7 @@ const About = () => {
                     />
 
                     {/* Floating Community Card */}
-                    <div className="absolute bottom-8 left-8 bg-white p-4 rounded-xl flex items-center gap-3 max-w-lg">
+                    <div className="hidden absolute bottom-8 left-8 bg-white p-4 rounded-xl md:flex  items-center gap-3 max-w-lg">
                         <div className="flex -space-x-4">
                             {[
                                 "/images/about/user-1.jpeg",

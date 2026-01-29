@@ -6,7 +6,7 @@ import { FaBuilding } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="px-6 md:px-16 lg:px-24 xl:px-32 pt-8 w-full bg-primary-800 text-gray-50">
+    <footer className="px-4 md:px-16 lg:px-24 xl:px-32 pt-8 w-full bg-primary-800 text-gray-50">
       {/* Top Section */}
       <div className="flex flex-col md:flex-row justify-between gap-10 border-b border-gray-500 pb-6">
 
