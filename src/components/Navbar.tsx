@@ -24,7 +24,7 @@ export default function Navbar() {
                     <span className="font-semibold">Phone:</span> 9650773891, 9910678889
                 </p>
 
-                <Link href="/" className="flex items-center gap-1 px-3 py-1 rounded-lg text-primary-800 bg-violet-50 hover:bg-slate-100 transition active:scale-95 ml-3">
+                <Link href="/contact" className="flex items-center gap-1 px-3 py-1 rounded-lg text-primary-800 bg-violet-50 hover:bg-slate-100 transition active:scale-95 ml-3">
                     Reach us
                     <IoIosArrowRoundForward className="text-2xl" />
                 </Link>
@@ -81,12 +81,6 @@ export default function Navbar() {
 
                     </ul>
 
-                    <button
-                        type="button"
-                        className="bg-white text-gray-600 border border-gray-300 mt-6 text-sm hover:bg-gray-50 active:scale-95 transition-all w-40 h-11 rounded-full"
-                    >
-                        Get started
-                    </button>
                 </div>
             </nav>
         </>

@@ -18,7 +18,7 @@ const About = () => {
                 {/* Left Image Card */}
                 <div className="relative shadow-2xl shadow-primary-300 rounded-2xl overflow-hidden shrink-0">
                     <Image
-                        src="/about.jpeg"
+                        src="/images/about/about.jpeg"
                         alt="Unlimited Consultancy Team"
                         width={451}
                         height={451}
