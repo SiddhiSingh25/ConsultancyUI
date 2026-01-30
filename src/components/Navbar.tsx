@@ -47,12 +47,12 @@ export default function Navbar() {
 
                 {/* Desktop Menu */}
                 <ul className="md:flex hidden items-center gap-10">
-                    <li><Link href="/" className="hover:text-gray-500/80 transition">Home</Link></li>
-                    <li><Link href="/about" className="hover:text-gray-500/80 transition">About us</Link></li>
-                    <li><Link href="/services" className="hover:text-gray-500/80 transition">Our Services</Link></li>
-                    <li><Link href="/teams" className="hover:text-gray-500/80 transition">Teams</Link></li>
-                    <li><Link href="/faq" className="hover:text-gray-500/80 transition">FAQ's</Link></li>
-                    <li><Link href="/contact" className="hover:text-gray-500/80 transition">Contact Us</Link></li>
+                    <Link href="/" className="hover:text-gray-500/80 transition"><li>Home</li></Link>
+                    <Link href="/about" className="hover:text-gray-500/80 transition"><li>About us</li></Link>
+                    <Link href="/services" className="hover:text-gray-500/80 transition"><li>Our Services</li></Link>
+                    <Link href="/teams" className="hover:text-gray-500/80 transition"><li>Teams</li></Link>
+                    <Link href="/faq" className="hover:text-gray-500/80 transition"><li>FAQ's</li></Link>
+                    <Link href="/contact" className="hover:text-gray-500/80 transition"><li>Contact Us</li></Link>
                 </ul>
 
 
@@ -69,42 +69,29 @@ export default function Navbar() {
                     </svg>
                 </button>
 
-                {/* Mobile Menu
-                <div className={`absolute top-[70px] left-0 w-full bg-white p-6 md:hidden transition-all ${isMobileMenuOpen ? "block" : "hidden"}`}>
-                    <ul className="flex flex-col space-y-4 text-lg">
-                        <li><Link href="/" className="text-sm">Home</Link></li>
-                        <li><Link href="/about" className="text-sm">About us</Link></li>
-                        <li><Link href="/services" className="text-sm">Our Services</Link></li>
-                        <li><Link href="/faq" className="text-sm">FAQ's</Link></li>
-                        <li><Link href="/teams" className="text-sm">Teams</Link></li>
-                        <li><Link href="/contact" className="text-sm">Contact Us</Link></li>
-
-                    </ul>
-
-                </div> */}
 
 
                 {/* Mobile Menu */}
                 <div className={`absolute top-[70px] left-0 w-full bg-white p-6 md:hidden transition-all ${isMobileMenuOpen ? "block" : "hidden"}`}>
                     <ul className="flex flex-col space-y-4 text-lg">
-                        <li>
-                            <Link href="/" className="text-sm" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
-                        </li>
-                        <li>
-                            <Link href="/about" className="text-sm" onClick={() => setIsMobileMenuOpen(false)}>About us</Link>
-                        </li>
-                        <li>
-                            <Link href="/services" className="text-sm" onClick={() => setIsMobileMenuOpen(false)}>Our Services</Link>
-                        </li>
-                        <li>
-                            <Link href="/faq" className="text-sm" onClick={() => setIsMobileMenuOpen(false)}>FAQ's</Link>
-                        </li>
-                        <li>
-                            <Link href="/teams" className="text-sm" onClick={() => setIsMobileMenuOpen(false)}>Teams</Link>
-                        </li>
-                        <li>
-                            <Link href="/contact" className="text-sm" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</Link>
-                        </li>
+                       
+                            <Link href="/" className="text-sm" onClick={() => setIsMobileMenuOpen(false)}> <li>Home</li></Link>
+                        
+                       
+                            <Link href="/about" className="text-sm" onClick={() => setIsMobileMenuOpen(false)}> <li>About us</li></Link>
+                        
+                       
+                            <Link href="/services" className="text-sm" onClick={() => setIsMobileMenuOpen(false)}> <li>Our Services</li></Link>
+                        
+                       
+                            <Link href="/faq" className="text-sm" onClick={() => setIsMobileMenuOpen(false)}> <li>FAQ's</li></Link>
+                        
+                       
+                            <Link href="/teams" className="text-sm" onClick={() => setIsMobileMenuOpen(false)}> <li>Teams</li></Link>
+                        
+                       
+                            <Link href="/contact" className="text-sm" onClick={() => setIsMobileMenuOpen(false)}> <li>Contact Us</li></Link>
+                        
                     </ul>
                 </div>
 

@@ -11,108 +11,107 @@ import {
   FaSearch,
   FaShieldAlt,
   FaGlobeAsia,
-  FaHandsHelping
+  FaHandsHelping,
 } from "react-icons/fa";
 import { VscGraphLine } from "react-icons/vsc";
 
 export const services = [
   {
-    id: 1,
+    id: "business-consultancy-services",
     icon: FaBriefcase,
     title: "Business Consultancy Services",
     description:
       "Strategic consulting to help startups, SMEs, and enterprises plan, structure, and scale efficiently.",
   },
   {
-    id: 2,
+    id: "company-incorporation-registration",
     icon: FaBuilding,
     title: "Company Incorporation & Registration",
     description:
       "End-to-end company incorporation services including Private Limited, LLP, Partnership, and Proprietorship.",
   },
   {
-    id: 3,
+    id: "foreign-entity-business-setup",
     icon: FaGlobe,
     title: "Foreign Entity Business Setup",
     description:
       "Expert support for foreign companies and NRIs to set up and operate businesses in India.",
   },
   {
-    id: 4,
+    id: "fema-compliance-services",
     icon: FaFileInvoiceDollar,
     title: "FEMA Compliance Services",
     description:
       "FEMA compliance, RBI filings, FDI reporting, and cross-border transaction support.",
   },
   {
-    id: 5,
+    id: "company-secretarial-services",
     icon: FaUserTie,
     title: "Company Secretarial Services",
     description:
       "ROC filings, statutory registers, board resolutions, annual compliances, and governance support.",
   },
   {
-    id: 6,
+    id: "tax-compliance-advisory",
     icon: FaCalculator,
     title: "Tax Compliance & Advisory",
     description:
       "GST registration & filing, income tax returns, statutory filings, and expert tax advisory.",
   },
   {
-    id: 7,
+    id: "msme-fssai-registration",
     icon: FaCertificate,
     title: "MSME & FSSAI Registration",
     description:
       "Fast and reliable MSME registration and FSSAI licensing services for regulatory approvals.",
   },
   {
-    id: 8,
+    id: "bookkeeping-accounting",
     icon: FaBook,
     title: "Bookkeeping & Accounting",
     description:
       "Accurate bookkeeping and accounting services to maintain compliant financial records.",
   },
   {
-    id: 9,
+    id: "payroll-management-services",
     icon: FaMoneyCheckAlt,
     title: "Payroll Management Services",
     description:
       "Complete payroll processing including salary computation, deductions, and compliance reporting.",
   },
   {
-    id: 10,
+    id: "cost-management-financial-planning",
     icon: VscGraphLine,
     title: "Cost Management & Financial Planning",
     description:
       "Cost control, financial planning, and profitability improvement strategies.",
   },
   {
-    id: 11,
+    id: "internal-audit-services",
     icon: FaSearch,
     title: "Internal Audit Services",
     description:
       "Internal audits to evaluate controls, identify risks, and improve operational efficiency.",
   },
   {
-    id: 12,
+    id: "compliance-audit-services",
     icon: FaShieldAlt,
     title: "Compliance Audit Services",
     description:
       "Compliance audits to ensure adherence to statutory laws, policies, and industry standards.",
   },
   {
-    id: 13,
+    id: "international-accounting-taxation-services",
     icon: FaGlobeAsia,
-    title: "International Accounting & Taxation",
+    title: "International Accounting & Taxation Services",
     description:
       "Accounting and taxation services for US, UK, and Dubai-based businesses.",
   },
   {
-    id: 14,
+    id: "other-business-support-services",
     icon: FaHandsHelping,
     title: "Other Business Support Services",
     description:
       "Customized compliance and business support services for evolving requirements.",
   },
 ];
-
