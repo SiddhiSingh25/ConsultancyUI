@@ -3,11 +3,7 @@
 export default function Contact() {
   return (
     <>
-      {/* Google Font */}
-      <style>{`
-        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
-        * { font-family: "Poppins", sans-serif; }
-      `}</style>
+   
 
       <section className="relative bg-white flex flex-col md:flex-row justify-center px-0 md:px-16 lg:px-24 xl:px-24 py-20 gap-20">
 

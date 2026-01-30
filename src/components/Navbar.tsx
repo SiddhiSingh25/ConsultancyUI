@@ -47,12 +47,12 @@ export default function Navbar() {
 
                 {/* Desktop Menu */}
                 <ul className="md:flex hidden items-center gap-10">
-                    <Link href="/" className="hover:text-gray-500/80 transition"><li>Home</li></Link>
-                    <Link href="/about" className="hover:text-gray-500/80 transition"><li>About us</li></Link>
-                    <Link href="/services" className="hover:text-gray-500/80 transition"><li>Our Services</li></Link>
-                    <Link href="/teams" className="hover:text-gray-500/80 transition"><li>Teams</li></Link>
-                    <Link href="/faq" className="hover:text-gray-500/80 transition"><li>FAQ's</li></Link>
-                    <Link href="/contact" className="hover:text-gray-500/80 transition"><li>Contact Us</li></Link>
+                    <Link href="/" className="hover:text-secondary-500 transition"><li>Home</li></Link>
+                    <Link href="/about" className="hover:text-secondary-500 transition"><li>About us</li></Link>
+                    <Link href="/services" className="hover:text-secondary-500 transition"><li>Our Services</li></Link>
+                    <Link href="/teams" className="hover:text-secondary-500 transition"><li>Teams</li></Link>
+                    <Link href="/faq" className="hover:text-secondary-500 transition"><li>FAQ's</li></Link>
+                    <Link href="/contact" className="hover:text-secondary-500 transition"><li>Contact Us</li></Link>
                 </ul>
 
 
@@ -61,7 +61,7 @@ export default function Navbar() {
                 <button
                     aria-label="menu-btn"
                     type="button"
-                    className="menu-btn inline-block md:hidden active:scale-90 transition"
+                    className="menu-btn inline-block md:hidden  transition"
                     onClick={toggleMobileMenu}
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="#000">

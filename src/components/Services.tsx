@@ -12,22 +12,23 @@ export default function Services() {
         Providing expert accounting, taxation, and advisory services to help businesses grow with confidence.
       </p>
 
-      <div className="flex items-center justify-center flex-wrap gap-6 mt-12">
-        {services.map(({ id, icon: Icon, title, description }) => (
-          <Link key={id} href={`/services/${id}`} className="group">
-            <article className="flex flex-col text-center items-center justify-center rounded-xl p-6 border border-primary-300 gap-6 max-w-sm transition hover:shadow-lg hover:scale-105">
-              <div className="p-6 aspect-square bg-primary-100 rounded-full transition group-hover:bg-primary-200">
-                <Icon className="text-primary-800 text-2xl" />
-              </div>
+   <div className="flex items-center justify-center flex-wrap gap-6 mt-12">
+  {services.map(({ id, icon: Icon, title, description }) => (
+    <Link key={id} href={`/services/${id}`} className="group">
+      <article className="flex flex-col text-center items-center justify-between rounded-xl p-6 border border-primary-300 gap-6 max-w-sm h-60 group-hover:shadow-lg">
+        <div className="p-6 aspect-square bg-primary-100 rounded-full transition group-hover:bg-primary-200">
+          <Icon className="text-primary-800 text-2xl" />
+        </div>
 
-              <div className="space-y-2">
-                <h3 className="text-base font-semibold text-slate-700">{title}</h3>
-                <p className="text-sm text-slate-600 line-clamp-3">{description}</p>
-              </div>
-            </article>
-          </Link>
-        ))}
-      </div>
+        <div className="space-y-2">
+          <h3 className="text-base font-semibold text-slate-700">{title}</h3>
+          <p className="text-sm text-slate-600 line-clamp-3">{description}</p>
+        </div>
+      </article>
+    </Link>
+  ))}
+</div>
+
 
     </section>
   );
