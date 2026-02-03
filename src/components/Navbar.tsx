@@ -26,9 +26,25 @@ export default function Navbar() {
             <div className="w-full bg-primary-800 text-white flex flex-col md:flex-row justify-between items-center px-6 md:px-16 lg:px-24 xl:px-32 py-3 gap-0">
                 {/* Contact Info */}
                 <p className="text-center md:text-left text-sm md:text-base">
-                    <span className="font-semibold"><MdEmail className="text-secondary-500 inline text-xl" /></span> unmatchedconsultancy@gmail.com <br className="md:hidden" />
-                    <span className="font-semibold"><IoIosCall className="text-secondary-500 inline text-xl" /></span>+91 9650773891
+                    <a
+                        href="mailto:unmatchedconsultancy@gmail.com"
+                        className="inline-flex items-center gap-1 hover:text-secondary-500 transition"
+                    >
+                        <MdEmail className="text-secondary-500 text-xl" />
+                        unmatchedconsultancy@gmail.com
+                    </a>
+
+                    <br className="md:hidden" />
+
+                    <a
+                        href="tel:+919650773891"
+                        className="inline-flex items-center gap-1 ml-2 hover:text-secondary-500 transition"
+                    >
+                        <IoIosCall className="text-secondary-500 text-xl" />
+                        +91 9650773891
+                    </a>
                 </p>
+
 
                 <div className="hidden md:flex items-center gap-1 px-3 py-1 rounded-lg  ml-3">
                     <Link href="/" >
@@ -58,7 +74,7 @@ export default function Navbar() {
                         alt="Company Logo"
                         width={80}
                         height={32}
-                        sizes="80px"
+                        sizes="150px"
                         className="w-[80px] h-auto object-contain"
                     />
 

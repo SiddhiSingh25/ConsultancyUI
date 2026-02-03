@@ -32,7 +32,7 @@ export default function Start() {
 
         {/* Main Heading */}
         <h1 className=" text-center text-5xl leading-[68px] md:text-6xl md:leading-[80px] font-semibold max-w-4xl text-primary-900 mt-6">
-          Unmatched Consultancy — Your Trusted Accounting Partner
+          Unmatched Consultancy — Your Trusted Business Partner
         </h1>
 
         {/* Subtext */}

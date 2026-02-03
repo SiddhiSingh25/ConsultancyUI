@@ -7,6 +7,7 @@ import { MdEmail } from "react-icons/md";
 import { teamData } from "../data/teams-data.js";
 import Heading from "./common/Heading";
 import Link from "next/link.js";
+import { LiaLinkedinIn } from "react-icons/lia";
 
 type TeamProps = {
   limit?: number;
@@ -58,10 +59,7 @@ export default function Team({ limit }: TeamProps) {
             {/* Social Icons */}
             <div className="flex justify-center gap-4 mt-5 text-secondary-500">
               <Link href="/" className="bg-secondary-50 p-2 rounded-full hover:bg-secondary-200 transition cursor-pointer">
-                <FaFacebookF />
-              </Link>
-              <Link href="/" className="bg-secondary-50 p-2 rounded-full hover:bg-secondary-200 transition cursor-pointer">
-                <FaInstagram />
+                <LiaLinkedinIn />
               </Link>
               <Link href="/" className="bg-secondary-50 p-2 rounded-full hover:bg-secondary-200 transition cursor-pointer">
                 <MdEmail />
