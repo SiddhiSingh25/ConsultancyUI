@@ -20,9 +20,9 @@ export default function Start() {
         {/* Trial / Announcement */}
         <Link
           href="/"
-          className="mt-32 flex items-center gap-2 border border-primary-800 rounded-full p-1 pr-3 text-sm font-medium text-primary bg-white"
+          className="mt-32 flex items-center gap-2 border border-primary-400 rounded-full p-1 pr-3 text-sm font-medium text-primary bg-white"
         >
-          <span className="bg-primary-800 text-white text-xs px-3 py-1 rounded-full">
+          <span className="bg-secondary-400 text-white text-xs px-3 py-1 rounded-full">
             NEW
           </span>
           <p className="flex items-center gap-1">
