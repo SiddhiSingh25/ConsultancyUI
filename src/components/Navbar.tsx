@@ -58,8 +58,10 @@ export default function Navbar() {
                         alt="Company Logo"
                         width={80}
                         height={32}
-                        className="object-contain"
+                        sizes="80px"
+                        className="w-[80px] h-auto object-contain"
                     />
+
                 </Link>
 
                 {/* Desktop Menu */}

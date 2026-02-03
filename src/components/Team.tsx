@@ -13,16 +13,16 @@ type TeamProps = {
 };
 
 
-export default function Team({limit} : TeamProps) {
-const visibleTeam = limit
+export default function Team({ limit }: TeamProps) {
+  const visibleTeam = limit
     ? teamData.slice(0, limit)
     : teamData;
 
   return (
     <section className="py-16 px-4 md:px-16 lg:px-24 xl:px-32">
 
-       <Heading title={"Meet Our Team"} description= {`A dynamic team delivering unmatched business solutions.`} />
-    
+      <Heading title={"Meet Our Team"} description={`A dynamic team delivering unmatched business solutions.`} />
+
 
       {/* Grid */}
       <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8 max-w-7xl mx-auto">
@@ -37,6 +37,7 @@ const visibleTeam = limit
                 src={team.image}
                 alt={team.name}
                 fill
+                sizes="96px"
                 className="rounded-full object-cover shadow-md"
               />
             </div>
@@ -62,7 +63,7 @@ const visibleTeam = limit
               <Link href="/" className="bg-secondary-50 p-2 rounded-full hover:bg-secondary-200 transition cursor-pointer">
                 <FaInstagram />
               </Link>
-              <Link  href="/" className="bg-secondary-50 p-2 rounded-full hover:bg-secondary-200 transition cursor-pointer">
+              <Link href="/" className="bg-secondary-50 p-2 rounded-full hover:bg-secondary-200 transition cursor-pointer">
                 <MdEmail />
               </Link>
             </div>

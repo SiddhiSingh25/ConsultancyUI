@@ -35,7 +35,7 @@ export default function Contact() {
 
         {/* Right Form */}
         <div className="w-full max-w-lg max-md:mx-auto bg-primary-100/0 backdrop-blur-sm border border-white/10 rounded-xl p-4">
-          <form className="space-y-6">
+          <form className="space-y-6" suppressHydrationWarning>
             {/* Name */}
             <div>
               <label className="block text-slate-900 text-sm mb-2">Name</label>
