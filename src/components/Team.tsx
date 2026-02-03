@@ -4,22 +4,29 @@ import Image from "next/image";
 import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
-import { teamMembers } from "../data/teams-data.js";
+import { teamData } from "../data/teams-data.js";
+import Heading from "./common/Heading";
+import Link from "next/link.js";
 
-export default function Teams() {
+type TeamProps = {
+  limit?: number;
+};
+
+
+export default function Team({limit} : TeamProps) {
+const visibleTeam = limit
+    ? teamData.slice(0, limit)
+    : teamData;
+
   return (
-    <section className="py-16 px-6">
-      <h1 className="text-3xl font-medium text-primary-800 text-center">
-        Meet Our Team
-      </h1>
+    <section className="py-16 px-4 md:px-16 lg:px-24 xl:px-32">
 
-      <p className="text-primary-600 text-center mt-2">
-        A dynamic team delivering unmatched business solutions.
-      </p>
+       <Heading title={"Meet Our Team"} description= {`A dynamic team delivering unmatched business solutions.`} />
+    
 
       {/* Grid */}
-      <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 max-w-7xl mx-auto">
-        {teamMembers.map((team, idx) => (
+      <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        {visibleTeam.map((team, idx) => (
           <div
             key={idx}
             className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 text-center"
@@ -48,16 +55,16 @@ export default function Teams() {
             </p>
 
             {/* Social Icons */}
-            <div className="flex justify-center gap-4 mt-5 text-primary">
-              <div className="bg-primary-100 p-2 rounded-full hover:bg-primary-200 transition">
+            <div className="flex justify-center gap-4 mt-5 text-secondary-500">
+              <Link href="/" className="bg-secondary-50 p-2 rounded-full hover:bg-secondary-200 transition cursor-pointer">
                 <FaFacebookF />
-              </div>
-              <div className="bg-primary-100 p-2 rounded-full hover:bg-primary-200 transition">
+              </Link>
+              <Link href="/" className="bg-secondary-50 p-2 rounded-full hover:bg-secondary-200 transition cursor-pointer">
                 <FaInstagram />
-              </div>
-              <div className="bg-primary-100 p-2 rounded-full hover:bg-primary-200 transition">
+              </Link>
+              <Link  href="/" className="bg-secondary-50 p-2 rounded-full hover:bg-secondary-200 transition cursor-pointer">
                 <MdEmail />
-              </div>
+              </Link>
             </div>
           </div>
         ))}

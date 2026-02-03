@@ -1,16 +1,21 @@
+"use client";
+
+
 import Image from 'next/image'
+import Link from 'next/link'
+import Heading from './common/Heading'
+import { usePathname } from "next/navigation";
 
 const About = () => {
+
+    let pathname = usePathname()
     return (
         <div className='py-8'>
 
-            <h1 className="text-3xl text-primary-900 font-semibold text-center">
-                About us
-            </h1>
+          
 
-            <p className="text-sm text-primary-600 text-center mt-2 max-w-md mx-auto">
-                Providing expert accounting, taxation, and advisory services.
-            </p>
+            <Heading title={"About Us"} description={"Providing expert accounting, taxation, and advisory services."}/>
+
             <section className="py-12 px-4 md:px-16 lg:px-24 xl:px-24 flex flex-col md:flex-row items-center justify-center gap-10">
 
 
@@ -18,7 +23,7 @@ const About = () => {
                 {/* Left Image Card */}
                 <div className="relative shadow-2xl shadow-primary-300 rounded-2xl overflow-hidden shrink-0">
                     <Image
-                        src="/images/about/about.jpeg"
+                        src="/images/common.avif"
                         alt="Unlimited Consultancy Team"
                         width={451}
                         height={451}
@@ -44,7 +49,7 @@ const About = () => {
                                 />
                             ))}
                             <div className="flex items-center justify-center text-xs text-white size-9 rounded-full border-[3px] border-white bg-primary-800 hover:-translate-y-1 transition">
-                                50+
+                                20+
                             </div>
                         </div>
                         <p className="text-sm font-medium text-primary-800">
@@ -54,7 +59,7 @@ const About = () => {
                 </div>
 
                 {/* Right Content */}
-                <div className="text-base text-primary-600 max-w-lvh">
+                <div className="text-base text-slate-800 max-w-lvh">
                     <h1 className="text-xl uppercase font-semibold text-primary-700">
                         What we do?
                     </h1>
@@ -72,8 +77,8 @@ const About = () => {
                         Backed by 20+ experienced professionals, we operate from Delhi with offices in Gurugram and Noida, delivering reliable and timely support across the business lifecycle.
                     </p>
 
-                    <a
-                        href="#"
+                    {pathname != "/about" ? ( <Link
+                        href="/about"
                         className="inline-flex items-center gap-2 mt-8 bg-gradient-to-r from-primary-900 to-primary-300 py-3 px-8 rounded-full text-white hover:-translate-y-0.5 transition"
                     >
                         <span>Know more</span>
@@ -83,9 +88,14 @@ const About = () => {
                                 fill="#fff"
                             />
                         </svg>
-                    </a>
+                    </Link>) : ""}
+
+                   
                 </div>
             </section>
+
+
+
         </div>
     )
 }

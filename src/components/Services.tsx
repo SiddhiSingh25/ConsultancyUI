@@ -1,35 +1,53 @@
 import Link from "next/link";
-import { services } from "../data/services-data";
+import { servicesData } from "../data/services-data";
+import Heading from "./common/Heading";
 
-export default function Services() {
+type ServiceProp = {
+  limit?: number
+}
+
+export default function Services({limit} : ServiceProp) {
+
+  let VisibleServices = limit ? servicesData.slice(0,limit) : servicesData
   return (
-    <section className="py-8 px-4 md:px-16 lg:px-24 xl:px-24">
-      <h1 className="text-3xl text-primary-800 font-semibold text-center">
-        Our Services
-      </h1>
 
-      <p className="text-sm text-primary-600 text-center mt-2 max-w-md mx-auto">
-        Providing expert accounting, taxation, and advisory services to help businesses grow with confidence.
-      </p>
+    <section className="py-16 px-4 md:px-16 lg:px-24 xl:px-32">
+      {/* Heading */}
 
-   <div className="flex items-center justify-center flex-wrap gap-6 mt-12">
-  {services.map(({ id, icon: Icon, title, description }) => (
-    <Link key={id} href={`/services/${id}`} className="group">
-      <article className="flex flex-col text-center items-center justify-between rounded-xl p-6 border border-primary-300 gap-6 max-w-sm h-60 group-hover:shadow-lg">
-        <div className="p-6 aspect-square bg-primary-100 rounded-full transition group-hover:bg-primary-200">
-          <Icon className="text-primary-800 text-2xl" />
-        </div>
+       <Heading title={" Our Services"} description= {`Expert accounting, taxation, and advisory services designed to help
+          businesses grow with clarity and confidence.`} />
+     
 
-        <div className="space-y-2">
-          <h3 className="text-base font-semibold text-slate-700">{title}</h3>
-          <p className="text-sm text-slate-600 line-clamp-3">{description}</p>
-        </div>
-      </article>
-    </Link>
-  ))}
-</div>
+      {/* Cards */}
+      <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {VisibleServices.map(({ id, icon: Icon, title, description }) => (
+          <Link key={id} href={`/services/${id}`} className="group">
+            <article
+              className="
+                relative h-full rounded-2xl border border-slate-200 bg-white p-8
+                transition-all duration-300
+                hover:-translate-y-1 hover:shadow-xl
+              "
+            >
+              {/* Icon */}
+              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-secondary-50 transition group-hover:bg-secondary-100">
+                <Icon className="text-secondary-500 text-2xl" />
+              </div>
 
+              {/* Content */}
+              <div className="mt-6 text-center">
+                <h3 className="text-xl font-bold md:font-semibold text-slate-800">
+                  {title}
+                </h3>
 
+                <p className="mt-2 text-sm text-slate-600 leading-relaxed line-clamp-3">
+                  {description}
+                </p>
+              </div>
+            </article>
+          </Link>
+        ))}
+      </div>
     </section>
   );
 }

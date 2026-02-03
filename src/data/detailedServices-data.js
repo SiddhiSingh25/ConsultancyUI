@@ -1,4 +1,4 @@
-export const detailedServices = {
+export const detailedServicesData = {
   "company-incorporation-registration": {
     title: "Company Incorporation Registration",
     content:
@@ -306,4 +306,29 @@ export const detailedServices = {
       },
     ],
   },
+  "hn-other-certifications-and-registration": {
+  title: "Hn other certifications and Registration",
+  content:
+    "We are an ISO certification and compliance service provider in India, offering a comprehensive range of management system certifications, regulatory approvals, and statutory licenses. Our services help organizations across industries achieve compliance, improve operational efficiency, ensure quality, safety, and security, and meet national and international regulatory requirements.",
+  shortContent:
+    "End-to-end ISO certification, regulatory approvals, and statutory compliance services in India.",
+  highlights: [
+    {
+      title: "ISO Management System Certifications",
+      shortDesc:
+        "ISO 9001, ISO 14001, ISO 45001, ISO 22000, ISO 27001, ISO 20000-1, ISO 13485, ISO 50001, ISO 31000, ISO 21001",
+    },
+    {
+      title: "Certifications & Regulatory Approvals",
+      shortDesc:
+        "FDA Registration, CE Marking, HACCP, GMP/GHP, HALAL, ORGANIC, GLP, BIFMA, BIS Registration",
+    },
+    {
+      title: "Licenses & Statutory Registrations",
+      shortDesc:
+        "FSSAI, Drug & Cosmetic License, Factory License, Trademark, Patent, Copyright, Design, ISBN, MLM Compliance",
+    },
+  ],
+},
+
 };

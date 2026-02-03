@@ -13,7 +13,9 @@ export default function Start() {
       }}
     >
       {/* Main Hero */}
-      <main className="flex flex-col items-center max-md:px-2 min-h-screen">
+      {/* <main className="flex flex-col items-center max-md:px-2 min-h-screen"> */}
+      <main className="flex flex-col items-center max-md:px-2">
+
 
         {/* Trial / Announcement */}
         <Link
@@ -25,22 +27,6 @@ export default function Start() {
           </span>
           <p className="flex items-center gap-1">
             <span>Let’s Build Your Business Together</span>
-            <svg
-              className="mt-1"
-              width="6"
-              height="9"
-              viewBox="0 0 6 9"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="m1 1 4 3.5L1 8"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
           </p>
         </Link>
 
@@ -50,26 +36,32 @@ export default function Start() {
         </h1>
 
         {/* Subtext */}
-        <p className="text-center text-base text-primary-700 max-w-lg mt-2">
-          Unmatched Consultancy helps startups and businesses stay compliant, streamline operations, and grow with confidence, backed by 20+ experts across Delhi NCR.
+        <p className="text-center text-base text-slate-800 max-w-lg mt-2">
+          Unmatched Consultancy helps startups and businesses stay compliant, streamline operations, and grow with confidence, backed by 20+ experts supporting businesses globally.
         </p>
 
         {/* Buttons */}
         <div className="flex items-center gap-4 mt-8">
-          <button className="flex items-center gap-2 bg-primary-800 pointer hover:bg-primary-900 text-white active:scale-95 rounded-lg px-7 h-11">
+          <Link href="/contact">
+         
+          <button className="flex items-center gap-2 bg-primary-800 cursor-pointer hover:bg-primary-900 text-white active:scale-95 rounded-lg px-7 h-11">
             Get Started
             <FaArrowRightLong className="text-base" />
           </button>
+           </Link>
 
-          <button className="border border-primary-600 active:scale-95 hover:bg-white transition text-primary-600 rounded-lg px-8 h-11">
+<Link href="/services" className="cursor-pointer" > 
+
+          <button className="border cursor-pointer border-primary-600 active:scale-95 hover:bg-white transition text-primary-600 rounded-lg px-8 h-11">
             Our Services
           </button>
+          </Link>
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-18 max-w-[930px] w-full mt-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-18 max-w-[930px] w-full mt-0 md:mt-8">
           <div className="text-center">
-            <h2 className="font-medium text-2xl md:text-3xl text-primary-800">16+</h2>
+            <h2 className="font-medium text-2xl md:text-3xl text-primary-800">5+</h2>
             <p className="text-xs md:text-sm text-primary-500">Years of Expertise</p>
           </div>
           <div className="text-center">
@@ -77,7 +69,7 @@ export default function Start() {
             <p className="text-xs md:text-sm text-primary-500">Satisfied Clients</p>
           </div>
           <div className="text-center">
-            <h2 className="font-medium text-2xl md:text-3xl text-primary-800">12k+</h2>
+            <h2 className="font-medium text-2xl md:text-3xl text-primary-800">20+</h2>
             <p className="text-xs md:text-sm text-primary-500">Projects Completed</p>
           </div>
           <div className="text-center">

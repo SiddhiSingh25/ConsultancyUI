@@ -15,7 +15,7 @@ import {
 } from "react-icons/fa";
 import { VscGraphLine } from "react-icons/vsc";
 
-export const services = [
+export const servicesData = [
   {
     id: "business-consultancy-services",
     icon: FaBriefcase,
@@ -113,5 +113,12 @@ export const services = [
     title: "Other Business Support Services",
     description:
       "Customized compliance and business support services for evolving requirements.",
+  },
+   {
+    id: "hn-other-certifications-and-registration",
+    icon: FaHandsHelping,
+    title: "Hn other certifications and Registration",
+    description:
+      "ISO certification and compliance service provider in India, offering a comprehensive range of management system certifications, regulatory registrations, and statutory licenses to organizations across India",
   },
 ];

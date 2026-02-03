@@ -3,8 +3,14 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { MdEmail } from "react-icons/md";
+import { IoIosCall } from "react-icons/io";
+import { IoLogoLinkedin } from "react-icons/io5";
+import { FaInstagram } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { MdOutlineMailOutline } from "react-icons/md";
 
-import { IoIosArrowRoundForward } from "react-icons/io";
+// import { IoIosArrowRoundForward } from "react-icons/io";
 
 export default function Navbar() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -17,17 +23,28 @@ export default function Navbar() {
         <>
 
             {/* Top Banner */}
-            <div className="w-full bg-primary-800 text-white flex flex-col md:flex-row justify-between items-center px-6 md:px-16 lg:px-24 xl:px-32 py-3 gap-3 md:gap-0">
+            <div className="w-full bg-primary-800 text-white flex flex-col md:flex-row justify-between items-center px-6 md:px-16 lg:px-24 xl:px-32 py-3 gap-0">
                 {/* Contact Info */}
                 <p className="text-center md:text-left text-sm md:text-base">
-                    <span className="font-semibold">Email:</span> unmatchedconsultancy@gmail.com <br className="md:hidden" />
-                    <span className="font-semibold">Phone:</span> 9650773891, 9910678889
+                    <span className="font-semibold"><MdEmail className="text-secondary-500 inline text-xl" /></span> unmatchedconsultancy@gmail.com <br className="md:hidden" />
+                    <span className="font-semibold"><IoIosCall className="text-secondary-500 inline text-xl" /></span>+91 9650773891
                 </p>
 
-                <Link href="/contact" className="flex items-center gap-1 px-3 py-1 rounded-lg text-primary-800 bg-violet-50 hover:bg-slate-100 transition active:scale-95 ml-3">
-                    Reach us
-                    <IoIosArrowRoundForward className="text-2xl" />
-                </Link>
+                <div className="hidden md:flex items-center gap-1 px-3 py-1 rounded-lg  ml-3">
+                    <Link href="/" >
+                        <IoLogoLinkedin className="text-secondary-500 inline text-xl hover:text-secondary-600 transition active:scale-95" />
+                    </Link>
+                    <Link href="/" >
+                        <MdOutlineMailOutline className="text-secondary-500 inline text-xl hover:text-secondary-600 transition active:scale-95" />
+                    </Link>
+                    <Link href="/" >
+                        <FaXTwitter className="text-secondary-500 inline text-xl hover:text-secondary-600 transition active:scale-95" />
+                    </Link>
+                    <Link href="/" >
+                        <FaInstagram className="text-secondary-500 inline text-xl hover:text-secondary-600 transition active:scale-95" />
+                    </Link>
+                </div>
+
             </div>
 
 
@@ -46,14 +63,50 @@ export default function Navbar() {
                 </Link>
 
                 {/* Desktop Menu */}
-                <ul className="md:flex hidden items-center gap-10">
-                    <Link href="/" className="hover:text-secondary-500 transition"><li>Home</li></Link>
-                    <Link href="/about" className="hover:text-secondary-500 transition"><li>About us</li></Link>
-                    <Link href="/services" className="hover:text-secondary-500 transition"><li>Our Services</li></Link>
-                    <Link href="/teams" className="hover:text-secondary-500 transition"><li>Teams</li></Link>
-                    <Link href="/faq" className="hover:text-secondary-500 transition"><li>FAQ's</li></Link>
-                    <Link href="/contact" className="hover:text-secondary-500 transition"><li>Contact Us</li></Link>
+                <ul className="hidden md:flex items-center gap-10">
+                    <li>
+                        <Link href="/" className="hover:text-secondary-500 transition">
+                            Home
+                        </Link>
+                    </li>
+
+                    <li>
+                        <Link href="/about" className="hover:text-secondary-500 transition">
+                            About Us
+                        </Link>
+                    </li>
+
+                    <li>
+                        <Link href="/services" className="hover:text-secondary-500 transition">
+                            Our Services
+                        </Link>
+                    </li>
+
+                    <li>
+                        <Link href="/team" className="hover:text-secondary-500 transition">
+                            Team
+                        </Link>
+                    </li>
+
+                    <li>
+                        <Link href="/blogs" className="hover:text-secondary-500 transition">
+                            Blogs
+                        </Link>
+                    </li>
+
+                    <li>
+                        <Link href="/faq" className="hover:text-secondary-500 transition">
+                            FAQ's
+                        </Link>
+                    </li>
+
+                    <li>
+                        <Link href="/contact" className="hover:text-secondary-500 transition">
+                            Contact Us
+                        </Link>
+                    </li>
                 </ul>
+
 
 
 
@@ -74,24 +127,27 @@ export default function Navbar() {
                 {/* Mobile Menu */}
                 <div className={`absolute top-[70px] left-0 w-full bg-white p-6 md:hidden transition-all ${isMobileMenuOpen ? "block" : "hidden"}`}>
                     <ul className="flex flex-col space-y-4 text-lg">
-                       
-                            <Link href="/" className="text-sm" onClick={() => setIsMobileMenuOpen(false)}> <li>Home</li></Link>
-                        
-                       
-                            <Link href="/about" className="text-sm" onClick={() => setIsMobileMenuOpen(false)}> <li>About us</li></Link>
-                        
-                       
-                            <Link href="/services" className="text-sm" onClick={() => setIsMobileMenuOpen(false)}> <li>Our Services</li></Link>
-                        
-                       
-                            <Link href="/faq" className="text-sm" onClick={() => setIsMobileMenuOpen(false)}> <li>FAQ's</li></Link>
-                        
-                       
-                            <Link href="/teams" className="text-sm" onClick={() => setIsMobileMenuOpen(false)}> <li>Teams</li></Link>
-                        
-                       
-                            <Link href="/contact" className="text-sm" onClick={() => setIsMobileMenuOpen(false)}> <li>Contact Us</li></Link>
-                        
+
+                        <Link href="/" className="text-sm" onClick={() => setIsMobileMenuOpen(false)}> <li>Home</li></Link>
+
+
+                        <Link href="/about" className="text-sm" onClick={() => setIsMobileMenuOpen(false)}> <li>About us</li></Link>
+
+
+                        <Link href="/services" className="text-sm" onClick={() => setIsMobileMenuOpen(false)}> <li>Our Services</li></Link>
+
+
+                        <Link href="/team" className="text-sm" onClick={() => setIsMobileMenuOpen(false)}> <li>Team</li></Link>
+
+
+                        <Link href="/blogs" className="text-sm" onClick={() => setIsMobileMenuOpen(false)}> <li>Blogs</li></Link>
+
+
+                        <Link href="/faq" className="text-sm" onClick={() => setIsMobileMenuOpen(false)}> <li>FAQ's</li></Link>
+
+
+                        <Link href="/contact" className="text-sm" onClick={() => setIsMobileMenuOpen(false)}> <li>Contact Us</li></Link>
+
                     </ul>
                 </div>
 

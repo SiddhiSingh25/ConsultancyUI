@@ -1,9 +1,9 @@
-import Teams from '@/components/Teams'
+import Blogs from '@/components/Blogs'
 import React from 'react'
 
 const page = () => {
   return (
-    <Teams/>
+    <Blogs/>
   )
 }
 
