@@ -14,7 +14,6 @@ export default function Home() {
     <About/>
     <Services limit={6}/>
     <Team limit={6}/>
-        <FaqSection/>
         <Contact/>
     </>
    

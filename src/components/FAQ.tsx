@@ -32,11 +32,6 @@ const FaqSection = () => {
       answer:
         "Definitely! We tailor our services to your business requirements, ensuring that taxation, accounting, and advisory solutions match your specific goals.",
     },
-    {
-      question: "How do you ensure confidentiality and data security?",
-      answer:
-        "We strictly adhere to professional ethics, using secure communication channels and maintaining complete confidentiality of all client information.",
-    },
   ];
 
   return (

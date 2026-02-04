@@ -9,7 +9,7 @@ export default function Start() {
     <section
       className="flex flex-col items-center text-sm bg-cover bg-center bg-no-repeat"
       style={{
-        backgroundImage: "url('./bg-with-grid.png')",
+        backgroundImage: "url('/images/home/bg-with-grid.png')",
       }}
     >
       {/* Main Hero */}
@@ -26,7 +26,7 @@ export default function Start() {
             NEW
           </span>
           <p className="flex items-center gap-1">
-            <span>Let’s Build Your Business Together</span>
+            <span>Unmatched solution of all business problems</span>
           </p>
         </Link>
 
