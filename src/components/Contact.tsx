@@ -1,9 +1,48 @@
 "use client";
 
+import axios from 'axios'
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
+
+const schema = yup
+  .object()
+  .shape({
+    name: yup.string().required(),
+    email: yup.string().email().required(),
+    phoneNo: yup.number().required(),
+    message: yup.string().required(),
+  })
+  .required();
+
 export default function Contact() {
+
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    reset,
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+
+
+
+  const handleContact = async (data: any) => {
+    try {
+      const res = await axios.post("/api/contact", data);
+      console.log(res.data);
+      reset();
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+
   return (
     <>
-   
+
 
       <section className="relative bg-white flex flex-col md:flex-row justify-center px-0 md:px-16 lg:px-24 xl:px-24 py-20 gap-20">
 
@@ -35,38 +74,69 @@ export default function Contact() {
 
         {/* Right Form */}
         <div className="w-full max-w-lg max-md:mx-auto bg-primary-100/0 backdrop-blur-sm border border-white/10 rounded-xl p-4">
-          <form className="space-y-6" suppressHydrationWarning>
+          <form onSubmit={handleSubmit((data) => handleContact(data))} className="space-y-6" suppressHydrationWarning>
             {/* Name */}
             <div>
               <label className="block text-slate-900 text-sm mb-2">Name</label>
-              <input 
-                type="text" 
-                required
-                placeholder="Eden Johnson" 
+              <input
+                type="text"
+                {...register('name')}
+                placeholder="Eden Johnson"
                 className="w-full bg-primary-100/5 border border-primary-900 rounded-lg px-4 py-3 text-slate-900/40 placeholder:text-slate-900/40 placeholder:text-sm focus:outline-none focus:border-primary-600 transition"
               />
+              {errors.name && (
+                <p className="text-red-500 text-xs mt-1">
+                  {errors.name.message}
+                </p>
+              )}
             </div>
 
             {/* Email */}
             <div>
               <label className="block text-slate-900 text-sm mb-2">Email</label>
-              <input 
-                type="email" 
-                required
-                placeholder="Eden@example.com" 
+              <input
+                type="email"
+                {...register('email')}
+                placeholder="Eden@example.com"
                 className="w-full bg-primary-100/5 border border-primary-900 rounded-lg px-4 py-3 text-slate-900/40 placeholder:text-slate-900/40 placeholder:text-sm focus:outline-none focus:border-primary-600 transition"
               />
+              {errors.email && (
+                <p className="text-red-500 text-xs mt-1">
+                  {errors.email.message}
+                </p>
+              )}
+            </div>
+
+            {/* Phone No */}
+            <div>
+              <label className="block text-slate-900 text-sm mb-2">Phone</label>
+              <input
+                type="number"
+                {...register('phoneNo')}
+                placeholder="Eden@example.com"
+                className="w-full bg-primary-100/5 border border-primary-900 rounded-lg px-4 py-3 text-slate-900/40 placeholder:text-slate-900/40 placeholder:text-sm focus:outline-none focus:border-primary-600 transition"
+              />
+              {errors.phoneNo && (
+                <p className="text-red-500 text-xs mt-1">
+                  {errors.phoneNo.message}
+                </p>
+              )}
             </div>
 
             {/* Message */}
             <div>
               <label className="block text-slate-900 text-sm mb-2">Message</label>
-              <textarea 
-                placeholder="Write your message here..." 
+              <textarea
+                {...register('message')}
+                placeholder="Write your message here..."
                 rows={4}
-                required
                 className="w-full bg-primary-100/5 border border-primary-900 rounded-lg px-4 py-3 text-slate-900/40 placeholder:text-slate-900/40 placeholder:text-sm focus:outline-none focus:border-primary-600 transition resize-none"
               />
+              {errors.message && (
+                <p className="text-red-500 text-xs mt-1">
+                  {errors.message.message}
+                </p>
+              )}
             </div>
 
             {/* Footer */}
@@ -74,14 +144,23 @@ export default function Contact() {
               <p className="text-xs md:text-sm text-slate-900/90 max-w-xs">
                 By submitting, you agree to our <span className="text-slate-900">Terms</span> and <span className="text-slate-900">Privacy Policy</span>.
               </p>
-              <button 
+              {/* <button 
                 type="submit" 
                 className="bg-gradient-to-r from-primary-900 to-primary-600 hover:from-primary-600 hover:to-primary-900 text-white text-sm px-8 md:px-16 py-3 rounded-full transition duration-300 cursor-pointer"
               >
                 Submit
+              </button> */}
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="bg-gradient-to-r from-primary-900 to-primary-600 hover:from-primary-600 hover:to-primary-900 text-white text-sm px-8 md:px-16 py-3 rounded-full transition duration-300 cursor-pointer"
+              >
+                {isSubmitting ? "Submitting..." : "Submit"}
               </button>
+
             </div>
           </form>
+
         </div>
       </section>
     </>

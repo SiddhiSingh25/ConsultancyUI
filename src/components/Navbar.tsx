@@ -65,10 +65,10 @@ export default function Navbar() {
 
 
 
-            <nav className="sticky top-0 z-50 h-[70px]  w-full px-6 md:px-16 lg:px-24 xl:px-32 flex items-center justify-between bg-white text-gray-700 shadow-[0px_4px_25px_0px_#0000000D] transition-all">
+            <nav className="sticky top-0 z-50 sm:h-17.5 md:h-18.75 w-full px-6 md:px-16 lg:px-24 xl:px-32 flex items-center justify-between bg-white text-gray-700 shadow-[0px_4px_25px_0px_#0000000D] transition-all">
 
                 {/* Logo */}
-                <Link href="/" className="text-primary-600 flex items-center">
+                <Link href="/" className="text-primary-600 flex items-center justify-center">
                     {/* <Image
                         src="/logo.png"
                         alt="Company Logo"
@@ -82,7 +82,7 @@ export default function Navbar() {
                         alt="Company Logo"
                         width={160}
                         height={64}
-                        className="w-20 md:w-32 h-auto object-contain"
+                        className="w-16 md:w-32 h-auto object-contain"
                     />
 
 
