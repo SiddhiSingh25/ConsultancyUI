@@ -69,14 +69,7 @@ export default function Navbar() {
 
                 {/* Logo */}
                 <Link href="/" className="text-primary-600 flex items-center justify-center">
-                    {/* <Image
-                        src="/logo.png"
-                        alt="Company Logo"
-                        width={80}
-                        height={32}
-                        sizes="150px"
-                        className="w-[80px] h-auto object-contain"
-                    /> */}
+                    
                     <Image
                         src="/logo.png"
                         alt="Company Logo"
