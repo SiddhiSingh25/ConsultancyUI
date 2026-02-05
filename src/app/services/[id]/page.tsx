@@ -32,7 +32,7 @@ const Page = async ({ params }: PageProps) => {
         {/* Left Image Card */}
         <div className="relative shadow-2xl shadow-primary-300 rounded-2xl overflow-hidden shrink-0">
           <Image
-            src="/images/common.avif"
+            src="/images/services/services.png"
             alt={service.title}
             width={451}
             height={451}

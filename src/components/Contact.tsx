@@ -4,6 +4,8 @@ import axios from 'axios'
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import { ToastContainer, toast } from 'react-toastify';
+import Heading from './common/Heading';
 
 const schema = yup
   .object()
@@ -33,9 +35,12 @@ export default function Contact() {
     try {
       const res = await axios.post("/api/contact", data);
       console.log(res.data);
+
       reset();
+      toast("Data is sent successfully")
     } catch (error) {
       console.error(error);
+      toast("Got an error")
     }
   };
 
@@ -43,8 +48,15 @@ export default function Contact() {
   return (
     <>
 
+<Heading
+  title="Contact Us"
+  description="Get in touch with our experts for accounting, taxation, compliance, and business advisory support."
+/>
 
-      <section className="relative bg-white flex flex-col md:flex-row justify-center px-0 md:px-16 lg:px-24 xl:px-24 py-20 gap-20">
+      <section className="relative bg-white flex flex-col md:flex-row justify-center px-0 md:px-16 lg:px-24 xl:px-24 py-12 gap-20">
+
+
+
 
         {/* Background Blur Circle */}
         <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none mb-10 w-[140px] h-[140px] bg-primary-900 rounded-full blur-[200px]"></div>
@@ -54,9 +66,9 @@ export default function Contact() {
           {/* Community Avatars */}
           <div className="flex items-center p-1.5 rounded-full border border-primary-900 text-xs w-fit mx-auto md:mx-0">
             <div className="flex items-center">
-              <img className="w-7 h-7 rounded-full border border-primary-900" src="/images/about/user-1.jpeg" alt="userImage1" />
-              <img className="w-7 h-7 rounded-full border border-primary-900 -translate-x-2" src="/images/about/user-2.jpeg" alt="userImage2" />
-              <img className="w-7 h-7 rounded-full border border-primary-900 -translate-x-4" src="/images/about/user-3.jpeg" alt="userImage3" />
+              <img className="w-7 h-7 rounded-full border border-primary-900" src="/images/about/user-1.png" alt="userImage1" />
+              <img className="w-7 h-7 rounded-full border border-primary-900 -translate-x-2" src="/images/about/user-2.png" alt="userImage2" />
+              <img className="w-7 h-7 rounded-full border border-primary-900 -translate-x-4" src="/images/about/user-3.png" alt="userImage3" />
             </div>
             <p className="-translate-x-2 text-xs text-primary-900">Trusted by 20+ businesses</p>
           </div>
@@ -160,6 +172,7 @@ export default function Contact() {
 
             </div>
           </form>
+          <ToastContainer/>
 
         </div>
       </section>

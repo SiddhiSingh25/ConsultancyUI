@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { blogData } from '../data/blogs-data';
 import Heading from './common/Heading';
+import Image from 'next/image';
 
 export default function Blogs() {
   return (
@@ -14,23 +15,44 @@ export default function Blogs() {
       <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {blogData.map((item) => (
           <Link key={item.id} href={`/blogs/${item.id}`}>
-            <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 cursor-pointer">
-              <div className="relative">
-                <img
-                  className="w-full h-48 object-cover rounded-t-2xl"
-                  src="https://images.unsplash.com/photo-1590650516494-0c8e4a4dd67e?w=1200&h=800&auto=format&fit=crop&q=60"
+            <div className="group bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-300 cursor-pointer">
+
+              {/* Image */}
+              <div className="relative overflow-hidden h-48">
+                <Image
+                  src={item.image}
                   alt={item.title}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-t-2xl"></div>
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
-              <div className="p-5">
-                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 hover:text-secondary-600 hover:underline transition-colors">
+
+
+              {/* Content */}
+              <div className="p-5 space-y-3">
+
+                {/* Meta */}
+                <div className="flex items-center justify-between text-xs text-secondary-500">
+                  <span>{item.date}</span>
+                  <span className="font-medium">By {item.publishedBy}</span>
+                </div>
+
+                {/* Title */}
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-900  leading-snug line-clamp-2">
                   {item.title}
                 </h3>
-                <p className="text-sm text-secondary-500 font-medium mt-2">{item.date}</p>
-                <p className="text-gray-600 text-sm mt-2 line-clamp-2">{'Read more'}</p>
+
+
+                {/* CTA */}
+                <div className="flex items-center gap-2 pt-2 text-secondary-600 font-medium text-sm group-hover:gap-3 transition-all">
+                  <span>Read Article</span>
+                  <span className="text-lg">→</span>
+                </div>
               </div>
             </div>
+
           </Link>
         ))}
       </div>

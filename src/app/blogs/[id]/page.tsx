@@ -42,7 +42,7 @@ const Page = async ({ params }: PageProps) => {
       {/* Featured Image */}
       <div className="relative w-full h-[240px] sm:h-[360px] lg:h-[480px] rounded-2xl overflow-hidden mt-8 shadow-lg">
         <Image
-          src="/images/common.avif"
+          src={blog?.image}
           alt={blog.title}
           fill
           className="object-cover"
