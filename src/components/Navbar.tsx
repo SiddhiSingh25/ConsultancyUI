@@ -65,7 +65,7 @@ export default function Navbar() {
 
 
 
-            <nav className="sticky top-0 z-50 sm:h-17.5 md:h-18.75 w-full px-6 md:px-16 lg:px-24 xl:px-32 flex items-center justify-between bg-white text-gray-700 shadow-[0px_4px_25px_0px_#0000000D] transition-all">
+            <nav className="sticky top-0 z-50 sm:h-17 md:h-18.75 w-full px-6 md:px-16 lg:px-24 xl:px-32 flex items-center justify-between bg-white text-gray-700 shadow-[0px_4px_25px_0px_#0000000D] transition-all">
 
                 {/* Logo */}
                 <Link href="/" className="flex items-center ">

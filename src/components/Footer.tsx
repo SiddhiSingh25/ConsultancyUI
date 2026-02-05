@@ -108,7 +108,7 @@ export default function Footer() {
         <div className="md:max-w-sm flex-shrink-0">
           <Link href="/" className="flex items-center mb-4">
             <Image
-              src="/logo.png"
+              src="/logo-light.png"
               alt="Company Logo"
               width={140}
               height={60}

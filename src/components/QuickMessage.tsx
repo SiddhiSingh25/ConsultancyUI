@@ -29,7 +29,7 @@ const QuickMessage = () => {
     resolver: yupResolver(schema),
   });
 
-  const handleQuickMessage = async (data) => {
+  const handleQuickMessage = async (data:any) => {
     try {
       await axios.post("/api/contact", data);
       toast.success("Message sent successfully 🚀");
