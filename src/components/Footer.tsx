@@ -91,7 +91,7 @@
 //   );
 // }
 
-import Image from "next/image"; 
+import Image from "next/image";
 import Link from "next/link";
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
@@ -106,22 +106,22 @@ export default function Footer() {
 
         {/* Logo + About */}
         <div className="md:max-w-sm flex-shrink-0">
-  
 
-            <Link href="/" className="flex items-center">
-  <div className="relative h-24 sm:h-12 md:h-14 w-[120px] sm:w-[140px] md:w-[160px]">
-    <Image
-      src="/images/logo-light.png"
-      alt="Company Logo"
-      fill
-      priority
-      sizes="(max-width: 640px) 120px,
+
+          <Link href="/" className="flex items-center">
+            <div className="relative h-24 sm:h-12 md:h-14 w-[120px] sm:w-[140px] md:w-[160px]">
+              <Image
+                src="/images/logo-light.png"
+                alt="Company Logo"
+                fill
+                priority
+                sizes="(max-width: 640px) 120px,
              (max-width: 768px) 140px,
              160px"
-      className="object-contain"
-    />
-  </div>
-</Link>
+                className="object-contain"
+              />
+            </div>
+          </Link>
 
 
           <p className="mt-4 text-sm text-gray-300 leading-relaxed">
@@ -140,9 +140,10 @@ export default function Footer() {
                 { name: "Home", href: "/" },
                 { name: "About Us", href: "/about" },
                 { name: "Services", href: "/services" },
-                { name: "Teams", href: "/teams" },
-                { name: "Contact Us", href: "/contact" },
+                { name: "Team", href: "/team" },
+                { name: "Blogs", href: "/blog" },
                 { name: "FAQ's", href: "/faq" },
+                { name: "Contact Us", href: "/contact" },
               ].map((link) => (
                 <li key={link.name}>
                   <Link href={link.href} className="flex items-center gap-2 text-gray-300 hover:text-secondary-500 transition-colors">

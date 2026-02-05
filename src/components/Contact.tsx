@@ -12,10 +12,15 @@ const schema = yup
   .shape({
     name: yup.string().required(),
     email: yup.string().email().required(),
-    phoneNo: yup.number().required(),
+    phoneNo: yup
+    .number()
+    .typeError("Phone number is required")
+    .required(),
     message: yup.string().required(),
   })
   .required();
+
+  type ContactFormData = yup.InferType<typeof schema>;
 
 export default function Contact() {
 
@@ -25,7 +30,7 @@ export default function Contact() {
     handleSubmit,
     formState: { errors, isSubmitting },
     reset,
-  } = useForm({
+  } =  useForm<ContactFormData>({
     resolver: yupResolver(schema),
   });
 
@@ -36,8 +41,8 @@ export default function Contact() {
       const res = await axios.post("/api/contact", data);
       console.log(res.data);
 
+     toast.success("Data is sent successfully");
       reset();
-      toast("Data is sent successfully")
     } catch (error) {
       console.error(error);
       toast("Got an error")
@@ -123,9 +128,9 @@ export default function Contact() {
             <div>
               <label className="block text-slate-900 text-sm mb-2">Phone</label>
               <input
-                type="number"
+                type="tel"
                 {...register('phoneNo')}
-                placeholder="Eden@example.com"
+                placeholder="9863548337"
                 className="w-full bg-primary-100/5 border border-primary-900 rounded-lg px-4 py-3 text-slate-900/40 placeholder:text-slate-900/40 placeholder:text-sm focus:outline-none focus:border-primary-600 transition"
               />
               {errors.phoneNo && (
