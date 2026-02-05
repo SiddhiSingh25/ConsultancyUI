@@ -13,7 +13,13 @@ import "react-toastify/dist/ReactToastify.css";
 const schema = yup.object({
   name: yup.string().required("Name is required"),
   email: yup.string().email("Invalid email").required("Email is required"),
-  phoneNo: yup.string().required("Phone number is required"),
+  phoneNo: yup
+  .string()
+  .required("Phone number is required")
+  .matches(
+    /^[6-9]\d{9}$/,
+    "Enter a valid 10-digit mobile number"
+  ),
   message: yup.string().required("Message is required"),
 });
 
@@ -141,7 +147,6 @@ const QuickMessage = () => {
         </div>
       )}
 
-      <ToastContainer position="bottom-right" />
     </>
   );
 };

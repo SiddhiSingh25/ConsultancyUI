@@ -4,6 +4,9 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import QuickMessage from "@/components/QuickMessage";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,6 +37,16 @@ export default function RootLayout({
         <Navbar/>
         {children}
         <QuickMessage/>
+        
+        <ToastContainer
+          position="top-right"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop
+          closeOnClick
+          pauseOnHover
+        />
+
         <Footer/>
       </body>
     </html>
