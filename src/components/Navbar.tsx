@@ -46,7 +46,7 @@ export default function Navbar() {
                 </p>
 
 
-                <div className="hidden md:flex items-center gap-1 px-3 py-1 rounded-lg  ml-3">
+                <div className="hidden md:flex items-center gap-1 px-3 py-1 rounded-lg  ml-3 md:ml-5">
                     <Link href="/" >
                         <IoLogoLinkedin className="text-secondary-500 inline text-xl hover:text-secondary-600 transition active:scale-95" />
                     </Link>
@@ -65,116 +65,101 @@ export default function Navbar() {
 
 
 
-            <nav className="sticky top-0 z-50 sm:h-17 md:h-18.75 w-full px-6 md:px-16 lg:px-24 xl:px-32 flex items-center justify-between bg-white text-gray-700 shadow-[0px_4px_25px_0px_#0000000D] transition-all">
+       <nav className="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-gray-100 px-6 md:px-16 lg:px-24 xl:px-32 transition-all">
+  <div className="flex items-center justify-between h-[72px]">
 
-                {/* Logo */}
-                <Link href="/" className="flex items-center">
-                    <div className="relative h-20 sm:h-11 md:h-20 w-[120px] sm:w-[140px] md:w-[160px]">
-                        <Image
-                            src="/images/logo.png"
-                            alt="Company Logo"
-                            fill
-                            priority
-                            sizes="(max-width: 640px) 80px,
-             (max-width: 768px) 140px,
-             160px"
-                            className="object-contain"
-                        />
-                    </div>
-                </Link>
+    {/* Logo – untouched */}
+    <Link href="/" className="flex items-center">
+      <div className="relative h-20 sm:h-11 md:h-20 w-[120px] sm:w-[140px] md:w-[160px]">
+        <Image
+          src="/images/logo.png"
+          alt="Company Logo"
+          fill
+          priority
+          sizes="(max-width: 640px) 80px,
+          (max-width: 768px) 140px,
+          160px"
+          className="object-contain"
+        />
+      </div>
+    </Link>
 
+    {/* Desktop Menu */}
+    <ul className="hidden md:flex items-center gap-8 font-medium text-sm">
+      {[
+        ["Home", "/"],
+        ["About Us", "/about"],
+        ["Our Services", "/services"],
+        ["Team", "/team"],
+        ["Blogs", "/blogs"],
+        ["FAQ's", "/faq"],
+      ].map(([label, href]) => (
+        <li key={label} className="relative group">
+          <Link
+            href={href}
+            className="text-gray-700 hover:text-primary-900 transition"
+          >
+            {label}
+          </Link>
+          {/* underline animation */}
+          <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-primary-900 transition-all duration-300 group-hover:w-full" />
+        </li>
+      ))}
 
+      {/* CTA */}
+      <li>
+        <Link
+          href="/contact"
+          className="ml-4 inline-flex items-center rounded-full bg-primary-900 px-5 py-2 text-white text-sm font-semibold hover:bg-primary-700 transition shadow-sm"
+        >
+          Contact Us
+        </Link>
+      </li>
+    </ul>
 
-                {/* Desktop Menu */}
-                <ul className="hidden md:flex items-center gap-10">
-                    <li>
-                        <Link href="/" className="hover:text-secondary-500 transition">
-                            Home
-                        </Link>
-                    </li>
+    {/* Mobile Button */}
+    <button
+      aria-label="menu-btn"
+      type="button"
+      className="md:hidden rounded-lg p-2 hover:bg-gray-100 transition"
+      onClick={toggleMobileMenu}
+    >
+      <svg width="26" height="26" viewBox="0 0 30 30" fill="#000">
+        <path d="M3 7h24M3 15h24M3 23h24" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      </svg>
+    </button>
+  </div>
 
-                    <li>
-                        <Link href="/about" className="hover:text-secondary-500 transition">
-                            About Us
-                        </Link>
-                    </li>
+  {/* Mobile Menu */}
+  <div
+    className={`md:hidden overflow-hidden transition-all duration-300 ${
+      isMobileMenuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+    }`}
+  >
+    <ul className="flex flex-col gap-4 py-6 text-sm font-medium">
+      {[
+        ["Home", "/"],
+        ["About Us", "/about"],
+        ["Our Services", "/services"],
+        ["Team", "/team"],
+        ["Blogs", "/blogs"],
+        ["FAQ's", "/faq"],
+        ["Contact Us", "/contact"],
+      ].map(([label, href]) => (
+        <li key={label}>
+          <Link
+            href={href}
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="block rounded-lg px-4 py-3 hover:bg-primary-50 hover:text-primary-900 transition"
+          >
+            {label}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  </div>
+</nav>
 
-                    <li>
-                        <Link href="/services" className="hover:text-secondary-500 transition">
-                            Our Services
-                        </Link>
-                    </li>
-
-                    <li>
-                        <Link href="/team" className="hover:text-secondary-500 transition">
-                            Team
-                        </Link>
-                    </li>
-
-                    <li>
-                        <Link href="/blogs" className="hover:text-secondary-500 transition">
-                            Blogs
-                        </Link>
-                    </li>
-
-                    <li>
-                        <Link href="/faq" className="hover:text-secondary-500 transition">
-                            FAQ's
-                        </Link>
-                    </li>
-
-                    <li>
-                        <Link href="/contact" className="hover:text-secondary-500 transition">
-                            Contact Us
-                        </Link>
-                    </li>
-                </ul>
-
-
-
-
-                {/* Mobile Menu Button */}
-                <button
-                    aria-label="menu-btn"
-                    type="button"
-                    className="menu-btn inline-block md:hidden  transition"
-                    onClick={toggleMobileMenu}
-                >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="#000">
-                        <path d="M 3 7 A 1.0001 1.0001 0 1 0 3 9 L 27 9 A 1.0001 1.0001 0 1 0 27 7 L 3 7 z M 3 14 A 1.0001 1.0001 0 1 0 3 16 L 27 16 A 1.0001 1.0001 0 1 0 27 14 L 3 14 z M 3 21 A 1.0001 1.0001 0 1 0 3 23 L 27 23 A 1.0001 1.0001 0 1 0 27 21 L 3 21 z"></path>
-                    </svg>
-                </button>
-
-
-
-                {/* Mobile Menu */}
-                <div className={`absolute top-[70px] left-0 w-full bg-white p-6 md:hidden transition-all ${isMobileMenuOpen ? "block" : "hidden"}`}>
-                    <ul className="flex flex-col space-y-4 text-lg">
-
-                        <Link href="/" className="text-sm" onClick={() => setIsMobileMenuOpen(false)}> <li>Home</li></Link>
-
-
-                        <Link href="/about" className="text-sm" onClick={() => setIsMobileMenuOpen(false)}> <li>About us</li></Link>
-
-
-                        <Link href="/services" className="text-sm" onClick={() => setIsMobileMenuOpen(false)}> <li>Our Services</li></Link>
-
-
-                        <Link href="/team" className="text-sm" onClick={() => setIsMobileMenuOpen(false)}> <li>Team</li></Link>
-
-
-                        <Link href="/blogs" className="text-sm" onClick={() => setIsMobileMenuOpen(false)}> <li>Blogs</li></Link>
-
-
-                        <Link href="/faq" className="text-sm" onClick={() => setIsMobileMenuOpen(false)}> <li>FAQ's</li></Link>
-
-
-                        <Link href="/contact" className="text-sm" onClick={() => setIsMobileMenuOpen(false)}> <li>Contact Us</li></Link>
-
-                    </ul>
-                </div>
-
-            </nav>
         </>
     );
 }

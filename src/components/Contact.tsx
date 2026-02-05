@@ -173,7 +173,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-gradient-to-r from-primary-900 to-primary-600 hover:from-primary-600 hover:to-primary-900 text-white text-sm px-8 md:px-16 py-3 rounded-full transition duration-300 cursor-pointer"
+                className="bg-gradient-to-r from-secondary-500 to-secondary-300 hover:from-secondary-600 hover:to-secondary-900 text-white text-sm px-8 md:px-16 py-3 rounded-full transition duration-300 cursor-pointer"
               >
                 {isSubmitting ? "Submitting..." : "Submit"}
               </button>

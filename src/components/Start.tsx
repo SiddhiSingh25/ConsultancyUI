@@ -1,9 +1,16 @@
 "use client";
 
+import CountUp from "react-countup";
+import { useInView } from "react-intersection-observer";
 import Link from "next/link";
 import { FaArrowRightLong } from "react-icons/fa6";
 
 export default function Start() {
+
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.3,
+  });
 
   return (
     <section
@@ -44,7 +51,7 @@ export default function Start() {
         <div className="flex items-center gap-4 mt-8">
           <Link href="/contact">
          
-          <button className="flex items-center gap-2 bg-primary-800 cursor-pointer hover:bg-primary-900 text-white active:scale-95 rounded-lg px-7 h-11">
+          <button className="flex items-center gap-2 bg-secondary-600 cursor-pointer hover:bg-secondary-700 text-white active:scale-95 rounded-lg px-7 h-11">
             Get Started
             <FaArrowRightLong className="text-base" />
           </button>
@@ -52,28 +59,28 @@ export default function Start() {
 
 <Link href="/services" className="cursor-pointer" > 
 
-          <button className="border cursor-pointer border-primary-600 active:scale-95 hover:bg-white transition text-primary-600 rounded-lg px-8 h-11">
+          <button className="border cursor-pointer border-secondary-500 active:scale-95 hover:bg-white transition text-secondary-600 rounded-lg px-8 h-11">
             Our Services
           </button>
           </Link>
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-18 max-w-[930px] w-full mt-0 md:mt-8">
+        <div ref={ref} className="grid grid-cols-2 md:grid-cols-4 gap-8 py-18 max-w-[930px] w-full mt-0 md:mt-8">
           <div className="text-center">
-            <h2 className="font-medium text-2xl md:text-3xl text-primary-800">5+</h2>
+            <h2 className="font-medium text-2xl md:text-3xl text-primary-800">{inView && <CountUp start={0} end={5} duration={2} />}+</h2>
             <p className="text-xs md:text-sm text-primary-500">Years of Expertise</p>
           </div>
           <div className="text-center">
-            <h2 className="font-medium text-2xl md:text-3xl text-primary-800">5k+</h2>
+            <h2 className="font-medium text-2xl md:text-3xl text-primary-800">{inView && <CountUp start={0} end={50} duration={2} />}k+</h2>
             <p className="text-xs md:text-sm text-primary-500">Satisfied Clients</p>
           </div>
           <div className="text-center">
-            <h2 className="font-medium text-2xl md:text-3xl text-primary-800">20+</h2>
+            <h2 className="font-medium text-2xl md:text-3xl text-primary-800">{inView && <CountUp start={0} end={20} duration={2} />}+</h2>
             <p className="text-xs md:text-sm text-primary-500">Projects Completed</p>
           </div>
           <div className="text-center">
-            <h2 className="font-medium text-2xl md:text-3xl text-gray-800">3+</h2>
+            <h2 className="font-medium text-2xl md:text-3xl text-gray-800">{inView && <CountUp start={0} end={3} duration={2} />}+</h2>
             <p className="text-xs md:text-sm text-gray-500">Countries Served</p>
           </div>
         </div>

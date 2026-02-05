@@ -51,7 +51,7 @@ const QuickMessage = () => {
       {/* Floating Button */}
       <div
         onClick={() => setOpen(true)}
-        className="fixed bottom-6 right-6 h-12 w-12 md:h-14 md:w-14 rounded-full bg-primary-700 flex items-center justify-center shadow-lg hover:scale-110 transition cursor-pointer z-50"
+        className="fixed bottom-6 right-6 h-12 w-12 md:h-14 md:w-14 rounded-full bg-secondary-500 flex items-center justify-center shadow-lg hover:scale-110 transition cursor-pointer z-50"
       >
         <IoChatbubbleEllipsesSharp className="text-xl md:text-2xl text-white" />
       </div>

@@ -30,10 +30,10 @@ export default function Team({ limit }: TeamProps) {
         {visibleTeam.map((team, idx) => (
           <div
             key={idx}
-            className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 text-center"
+            className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 px-4 py-10 text-center"
           >
             {/* Avatar */}
-            <div className="relative w-24 h-24 mx-auto">
+            <div className="relative w-28 h-28 mx-auto">
               <Image
                 src={team.image}
                 alt={team.name}

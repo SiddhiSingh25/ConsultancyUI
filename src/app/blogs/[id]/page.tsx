@@ -16,14 +16,7 @@ const Page = async ({ params }: PageProps) => {
 
   return (
     <section className="py-12 px-4 md:px-16 lg:px-24 xl:px-32 bg-gray-50">
-      {/* Breadcrumb */}
-      <nav className="text-sm text-gray-400 mb-6 flex flex-wrap gap-1">
-        <Link href="/" className="hover:text-primary-600 transition">Home</Link>
-        <span className="mx-1 text-gray-300">/</span>
-        <Link href="/blogs" className="hover:text-primary-600 transition">Blogs</Link>
-        <span className="mx-1 text-gray-300">/</span>
-        <span className="text-gray-600 line-clamp-1">{blog.title}</span>
-      </nav>
+    
 
       {/* Title */}
       <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight max-w-4xl">

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Outfit } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -7,17 +7,11 @@ import QuickMessage from "@/components/QuickMessage";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const outfit = Outfit({
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-outfit",
 });
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 
 export const metadata: Metadata = {
   title: "Unmatched Consultancy",
@@ -26,28 +20,25 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <Navbar/>
+      <body className={`${outfit.variable} antialiased font-sans`}>
+        <Navbar />
         {children}
-        <QuickMessage/>
-        
+        <QuickMessage />
+
         <ToastContainer
           position="top-right"
           autoClose={3000}
-          hideProgressBar={false}
           newestOnTop
           closeOnClick
           pauseOnHover
         />
 
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );

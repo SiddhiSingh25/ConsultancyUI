@@ -12,13 +12,11 @@ const About = () => {
     return (
         <div className='py-8'>
 
-          
-
-            <Heading title={"About Us"} description={"Providing expert accounting, taxation, and advisory services."}/>
-
-            <section className="py-12 px-4 md:px-16 lg:px-24 xl:px-24 flex flex-col md:flex-row items-center justify-center gap-10">
 
 
+            <Heading title={"About Us"} description={"Providing expert accounting, taxation, and advisory services."} />
+
+            <section className="py-12 px-4 md:px-16 lg:px-24 xl:px-24 flex flex-col xl:flex-row items-center justify-center gap-10">
 
                 {/* Left Image Card */}
                 <div className="relative shadow-2xl shadow-primary-300 rounded-2xl overflow-hidden shrink-0">
@@ -63,9 +61,8 @@ const About = () => {
                     <h1 className="text-xl uppercase font-semibold text-primary-700">
                         What we do?
                     </h1>
-                    <div className="w-24 h-[3px] rounded-full bg-gradient-to-r from-primary-800 to-primary-300"></div>
 
-                    <p className="mt-8">
+                    <p className="mt-4">
                         Unmatched Consultancy is a trusted advisory and financial services firm helping entrepreneurs, startups, and established businesses build, manage, and grow with confidence.
                     </p>
 
@@ -77,9 +74,9 @@ const About = () => {
                         Backed by 20+ experienced professionals, we operate from Delhi with offices in Gurugram and Noida, delivering reliable and timely support across the business lifecycle.
                     </p>
 
-                    {pathname != "/about" ? ( <Link
+                    {pathname != "/about" ? (<Link
                         href="/about"
-                        className="inline-flex items-center gap-2 mt-8 bg-gradient-to-r from-primary-900 to-primary-300 py-3 px-8 rounded-full text-white hover:-translate-y-0.5 transition"
+                        className="inline-flex items-center gap-2 mt-8 bg-gradient-to-r from-secondary-500 to-secondary-300 py-3 px-8 rounded-full text-white hover:-translate-y-0.5 transition"
                     >
                         <span>Know more</span>
                         <svg width="13" height="12" viewBox="0 0 13 12" fill="none">
@@ -90,7 +87,7 @@ const About = () => {
                         </svg>
                     </Link>) : ""}
 
-                   
+
                 </div>
             </section>
 

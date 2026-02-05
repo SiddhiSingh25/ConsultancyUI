@@ -109,7 +109,7 @@ export default function Footer() {
 
 
           <Link href="/" className="flex items-center">
-            <div className="relative h-24 sm:h-12 md:h-14 w-[120px] sm:w-[140px] md:w-[160px]">
+            <div className="relative h-24 sm:h-24 md:h-32 w-[120px] sm:w-[140px] md:w-[160px]">
               <Image
                 src="/images/logo-light.png"
                 alt="Company Logo"
@@ -118,7 +118,7 @@ export default function Footer() {
                 sizes="(max-width: 640px) 120px,
              (max-width: 768px) 140px,
              160px"
-                className="object-contain"
+                className="object-contain md:object-cover"
               />
             </div>
           </Link>
