@@ -74,7 +74,7 @@ export default function Contact() {
           </div>
 
           {/* Heading */}
-          <h1 className="font-medium text-3xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-primary-900 to-primary-300 max-w-[470px] mt-4 mx-auto md:mx-0">
+          <h1 className="font-medium text-3xl px-1 md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-primary-900 to-primary-300 max-w-[470px] mt-4 mx-auto md:mx-0">
             Get Expert Business Advice Today
           </h1>
 

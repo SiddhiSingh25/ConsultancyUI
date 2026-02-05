@@ -35,9 +35,9 @@ const About = () => {
                     <div className="hidden absolute bottom-8 left-8 bg-white p-4 rounded-xl md:flex  items-center gap-3 max-w-lg">
                         <div className="flex -space-x-4">
                             {[
-                                "/images/about/user-1.jpeg",
-                                "/images/about/user-2.jpeg",
-                                "/images/about/user-3.jpeg",
+                                "/images/about/user-1.png",
+                                "/images/about/user-2.png",
+                                "/images/about/user-3.png",
                             ].map((src, i) => (
                                 <Image
                                     key={i}

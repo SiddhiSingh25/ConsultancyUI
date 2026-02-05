@@ -41,7 +41,7 @@ export default function Navbar() {
                         className="inline-flex items-center gap-1 ml-2 hover:text-secondary-500 transition"
                     >
                         <IoIosCall className="text-secondary-500 text-xl" />
-                        +91 9650773891
+                        +91 9910678889
                     </a>
                 </p>
 
@@ -68,20 +68,21 @@ export default function Navbar() {
             <nav className="sticky top-0 z-50 sm:h-17 md:h-18.75 w-full px-6 md:px-16 lg:px-24 xl:px-32 flex items-center justify-between bg-white text-gray-700 shadow-[0px_4px_25px_0px_#0000000D] transition-all">
 
                 {/* Logo */}
-                <Link href="/" className="flex items-center ">
-                    <Image
-                        src="/images/logo.png"
-                        alt="Company Logo"
-                        width={200}        // original / max size
-                        height={20}        // keep correct aspect ratio
-                        priority           // logo should load fast
-                        sizes="(max-width: 640px) 90px,
-           (max-width: 768px) 120px,
-           (max-width: 1024px) 140px,
-           160px"
-            className="w-[90px] sm:w-[110px] md:w-[130px] lg:w-[150px] xl:w-[160px] h-auto object-cover"
-                    />
+                <Link href="/" className="flex items-center">
+                    <div className="relative h-17.5 sm:h-11 md:h-20 w-[120px] sm:w-[140px] md:w-[160px]">
+                        <Image
+                            src="/images/logo.png"
+                            alt="Company Logo"
+                            fill
+                            priority
+                            sizes="(max-width: 640px) 80px,
+             (max-width: 768px) 140px,
+             160px"
+                            className="object-contain"
+                        />
+                    </div>
                 </Link>
+
 
 
                 {/* Desktop Menu */}

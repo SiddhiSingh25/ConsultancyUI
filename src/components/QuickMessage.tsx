@@ -32,7 +32,7 @@ const QuickMessage = () => {
   const handleQuickMessage = async (data:any) => {
     try {
       await axios.post("/api/contact", data);
-      toast.success("Message sent successfully 🚀");
+      toast.success("Message sent successfully ");
       reset();
       setOpen(false);
     } catch (error) {

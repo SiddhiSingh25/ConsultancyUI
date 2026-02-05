@@ -106,15 +106,23 @@ export default function Footer() {
 
         {/* Logo + About */}
         <div className="md:max-w-sm flex-shrink-0">
-          <Link href="/" className="flex items-center mb-4">
-            <Image
-              src="/logo-light.png"
-              alt="Company Logo"
-              width={140}
-              height={60}
-              className="object-contain"
-            />
-          </Link>
+  
+
+            <Link href="/" className="flex items-center">
+  <div className="relative h-24 sm:h-12 md:h-14 w-[120px] sm:w-[140px] md:w-[160px]">
+    <Image
+      src="/images/logo-light.png"
+      alt="Company Logo"
+      fill
+      priority
+      sizes="(max-width: 640px) 120px,
+             (max-width: 768px) 140px,
+             160px"
+      className="object-contain"
+    />
+  </div>
+</Link>
+
 
           <p className="mt-4 text-sm text-gray-300 leading-relaxed">
             Unmatched Consultancy is your trusted partner for accounting, taxation, audit, and financial advisory services. We help businesses navigate complex regulations and make informed decisions for sustainable growth.
@@ -150,7 +158,7 @@ export default function Footer() {
             <h2 className="font-semibold mb-6 text-lg text-gray-50">Get in Touch</h2>
             <div className="flex flex-col gap-3 text-sm">
               <a href="tel:+919650773891" className="flex items-center gap-2 text-gray-300 hover:text-secondary-500 transition-colors">
-                <FaPhoneAlt className="text-secondary-500" /> +91 9650773891
+                <FaPhoneAlt className="text-secondary-500" /> +91 9910678889
               </a>
               <a href="mailto:unmatchedconsultancy@gmail.com" className="flex items-center gap-2 text-gray-300 hover:text-secondary-500 transition-colors">
                 <MdEmail className="text-secondary-500" /> unmatchedconsultancy@gmail.com
