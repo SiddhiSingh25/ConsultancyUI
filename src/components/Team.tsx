@@ -20,7 +20,7 @@ const sectionVariants = {
     opacity: 1,
     transition: {
       duration: 0.6,
-      ease: "easeOut",
+      ease: [0.16, 1, 0.3, 1],
     },
   },
 };
@@ -42,6 +42,7 @@ const cardVariants = {
     transition: {
       duration: 0.45,
       ease: [0.25, 0.46, 0.45, 0.94],
+      
     },
   },
 };
@@ -71,6 +72,7 @@ export default function Team({ limit }: TeamProps) {
       <motion.div
         className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto"
         variants={containerVariants}
+        
       >
         {visibleTeam.map((team, idx) => (
           <motion.div key={idx} variants={cardVariants}>

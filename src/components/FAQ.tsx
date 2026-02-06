@@ -41,7 +41,7 @@ const FaqSection = () => {
       <Heading title={"Frequently Asked Questions"} description="Everything you need to know about our services."
       />
 
-      <section className="py-12 px-4 md:px-16 lg:px-24 xl:px-32 flex flex-col md:flex-row items-center justify-between gap-10">
+      <section className="py-12 px-4 md:px-16 lg:px-24 xl:px-32 flex flex-col md:flex-row items-center justify-center gap-10">
 
         {/* Left Image */}
         <div className=" hidden md:flex relative shadow-2xl shadow-primary-300 rounded-2xl overflow-hidden shrink-0">

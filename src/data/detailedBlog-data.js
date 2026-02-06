@@ -4,7 +4,7 @@ export const detailedBlogData = {
   image: "/images/blogs/blog-1.png",
   title: "5 Signs Your Business Needs a Consultant (Even If You’re Profitable)",
   date: "June 6, 2023",
-  postedBy: "Sachin",
+  postedBy: "Sachin Sharma",
   category: "Business Consulting",
   readTime: "6 min read",
   excerpt:

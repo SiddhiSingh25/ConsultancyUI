@@ -19,7 +19,7 @@ const Page = async ({ params }: PageProps) => {
     
 
       {/* Title */}
-      <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight max-w-4xl">
+      <h1 className="text-3xl sm:text-4xl lg:text-4xl font-bold text-gray-900 leading-tight max-w-4xl">
         {blog.title}
       </h1>
 
@@ -33,7 +33,7 @@ const Page = async ({ params }: PageProps) => {
       </div>
 
       {/* Featured Image */}
-      <div className="relative w-full h-[240px] sm:h-[360px] lg:h-[480px] rounded-2xl overflow-hidden mt-8 shadow-lg">
+      {/* <div className="relative w-full h-[240px] sm:h-[360px] lg:h-[560px] rounded-2xl overflow-hidden mt-8 shadow-lg">
         <Image
           src={blog?.image}
           alt={blog.title}
@@ -41,7 +41,22 @@ const Page = async ({ params }: PageProps) => {
           className="object-cover"
           priority
         />
-      </div>
+      </div> */}
+      <div className="relative w-full 
+  aspect-[16/9] 
+  sm:aspect-[3/1] 
+  lg:aspect-[21/9]
+  rounded-2xl overflow-hidden mt-8 shadow-lg"
+>
+  <Image
+    src={blog?.image}
+    alt={blog.title}
+    fill
+    className="object-cover"
+    priority
+  />
+</div>
+
 
       {/* Content & Sidebar */}
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-10 mt-14">
