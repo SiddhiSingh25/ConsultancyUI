@@ -1,7 +1,8 @@
 "use client";
+
 import React, { useState } from "react";
-import Heading from "./common/Heading";
 import Image from "next/image";
+import Heading from "./common/Heading";
 
 const FaqSection = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -25,105 +26,133 @@ const FaqSection = () => {
     {
       question: "Do you offer remote or online consultations?",
       answer:
-        "Yes, we provide both in-person and remote consultations to accommodate clients locally and globally, ensuring flexibility and convenience.",
+        "Yes, we provide both in-person and remote consultations to accommodate clients locally and globally.",
     },
     {
       question: "Can I customize your services for my business?",
       answer:
-        "Definitely! We tailor our services to your business requirements, ensuring that taxation, accounting, and advisory solutions match your specific goals.",
+        "Definitely! We tailor our services to your business requirements and goals.",
     },
   ];
 
   return (
+    <section className="relative overflow-hidden bg-primary-50/40 py-16">
+      {/* Heading */}
+      <Heading
+        label="FAQ"
+        title="Got Questions? We’ve Got Answers"
+        description="Everything you need to know about our services."
+      />
 
-    <>
-      <div className="bg-gray-50 py-12">
-        <Heading
-          label="FAQ"
-          title={"Get Your Have a Questions?"}
-          description="Everything you need to know about our services."
+      {/* Soft brand glow */}
+      <div className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary-900/10 blur-[220px]" />
+
+      {/* Decorative Left Image */}
+      <div className="pointer-events-none absolute left-0 top-1/2 hidden -translate-y-1/2 lg:block">
+        <Image
+          src="/images/faq/faq-shape-4.png"
+          alt="FAQ decoration left"
+          width={220}
+          height={220}
+          className="opacity-60 blur-[0.3px]"
         />
+      </div>
 
-        <section className="py-12 px-4 md:px-16 lg:px-24 xl:px-32 flex flex-col md:flex-row items-center justify-center gap-10">
+      {/* Decorative Right Image */}
+      <div className="pointer-events-none absolute right-0 top-1/2 hidden -translate-y-1/2 lg:block">
+        <Image
+          src="/images/faq/faq-shape-2-3.png"
+          alt="FAQ decoration right"
+          width={220}
+          height={220}
+          className="opacity-60 blur-[0.3px]"
+        />
+      </div>
 
-          {/* Left Image */}
-          <div className=" hidden md:flex relative shadow-2xl shadow-primary-300 rounded-2xl overflow-hidden shrink-0">
-            <Image
-              src="/images/faq/faq.png"
-              alt="Unlimited Consultancy Team"
-              width={451}
-              height={451}
-              className="max-w-md w-full object-cover rounded-2xl"
-              priority
-            />
+      {/* FAQ Content */}
+      <div className="relative z-10 mx-auto mt-12 max-w-3xl px-4 sm:px-6">
+        <div className="space-y-4">
+          {faqs.map((faq, index) => {
+            const isOpen = openIndex === index;
 
-            {/* subtle overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
-          </div>
-
-          {/* Right Content */}
-          <div className="text-base text-slate-800 max-w-lvh space-y-4">
-            {faqs.map((faq, index) => {
-              const isOpen = openIndex === index;
-
-              return (
-                <div
-                  key={index}
-                  onClick={() => setOpenIndex(isOpen ? null : index)}
-                  className={`rounded-xl px-5 py-4 cursor-pointer bg-white transition-all duration-300
-                border ${isOpen
-                      ? "border-primary-400 shadow-md"
-                      : "border-primary-200 hover:border-primary-300 hover:shadow-sm"
+            return (
+              <div
+                key={index}
+                onClick={() => setOpenIndex(isOpen ? null : index)}
+                className={`
+                  cursor-pointer rounded-xl bg-white
+                  px-5 py-4 transition-all duration-300
+                  border
+                  ${
+                    isOpen
+                      ? "border-transparent shadow-lg ring-1 ring-primary-600/30"
+                      : "border-primary-900/10 hover:border-primary-600/30 hover:shadow-md"
+                  }
+                `}
+              >
+                {/* Question */}
+                <div className="flex items-center justify-between gap-4">
+                  <h3
+                    className={`text-base font-semibold transition-colors ${
+                      isOpen
+                        ? "text-primary-900"
+                        : "text-primary-900/80"
                     }`}
-                >
-                  <div className="flex items-center justify-between gap-4">
-                    <h3
-                      className={`text-base font-medium transition-colors ${isOpen ? "text-primary-700" : "text-gray-900"
-                        }`}
-                    >
-                      {faq.question}
-                    </h3>
-
-                    <div
-                      className={`flex items-center justify-center w-8 h-8 rounded-full transition-all
-                    ${isOpen ? "bg-primary-100" : "bg-gray-100"}`}
-                    >
-                      <svg
-                        width="16"
-                        height="16"
-                        viewBox="0 0 18 18"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        className={`transition-transform duration-300 ${isOpen ? "rotate-180" : ""
-                          }`}
-                      >
-                        <path
-                          d="m4.5 7.2 3.793 3.793a1 1 0 0 0 1.414 0L13.5 7.2"
-                          stroke="#1D293D"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-
-                  {/* Answer */}
-                  <div
-                    className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-40 opacity-100 mt-3" : "max-h-0 opacity-0"
-                      }`}
                   >
-                    <p className="text-sm text-primary-600 leading-relaxed">
-                      {faq.answer}
-                    </p>
+                    {faq.question}
+                  </h3>
+
+                  <div
+                    className={`
+                      flex h-9 w-9 items-center justify-center rounded-full
+                      transition-all
+                      ${
+                        isOpen
+                          ? "bg-secondary-600 text-white"
+                          : "bg-secondary-100 text-secondary-600"
+                      }
+                    `}
+                  >
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 18 18"
+                      fill="none"
+                      className={`transition-transform duration-300 ${
+                        isOpen ? "rotate-180" : ""
+                      }`}
+                    >
+                      <path
+                        d="m4.5 7.2 3.793 3.793a1 1 0 0 0 1.414 0L13.5 7.2"
+                        stroke="currentColor"
+                        strokeWidth="1.8"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
                   </div>
                 </div>
-              );
-            })}
-          </div>
-        </section>
+
+                {/* Answer */}
+                <div
+                  className={`overflow-hidden transition-all duration-300 ease-in-out
+                    ${
+                      isOpen
+                        ? "max-h-40 opacity-100 mt-3"
+                        : "max-h-0 opacity-0"
+                    }
+                  `}
+                >
+                  <p className="text-sm leading-relaxed text-primary-900/70">
+                    {faq.answer}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </div>
-    </>
+    </section>
   );
 };
 

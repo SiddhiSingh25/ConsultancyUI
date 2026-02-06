@@ -1,33 +1,50 @@
 "use client";
 
-import axios from 'axios'
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from 'yup';
-import {  toast } from 'react-toastify';
-import Heading from './common/Heading';
+import axios from "axios";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+import { toast } from "react-toastify";
+import Heading from "./common/Heading";
+import { motion } from "framer-motion";
+import AnimatedButton from "./common/AnimatedButton";
 
-const schema = yup
-  .object()
-  .shape({
-    name: yup.string().required(),
-    email: yup.string().email().required(),
-   phoneNo: yup
-  .string()
-  .required("Phone number is required")
-  .matches(
-    /^[6-9]\d{9}$/,
-    "Enter a valid 10-digit mobile number"
-  ),
-    message: yup.string().required(),
-  })
-  .required();
+/* ---------------- Schema ---------------- */
+
+const schema = yup.object({
+  name: yup.string().required(),
+  email: yup.string().email().required(),
+  phoneNo: yup
+    .string()
+    .required("Phone number is required")
+    .matches(/^[6-9]\d{9}$/, "Enter a valid 10-digit mobile number"),
+  message: yup.string().required(),
+});
 
 type ContactFormData = yup.InferType<typeof schema>;
 
+/* ---------------- Animations ---------------- */
+
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15 },
+  },
+};
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 28 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
+  },
+};
+
+/* ---------------- Component ---------------- */
+
 export default function Contact() {
-
-
   const {
     register,
     handleSubmit,
@@ -37,153 +54,193 @@ export default function Contact() {
     resolver: yupResolver(schema),
   });
 
-
-
-  const handleContact = async (data: any) => {
+  const handleContact = async (data: ContactFormData) => {
     try {
-      const res = await axios.post("/api/contact", data);
-      console.log(res.data);
-
-      toast.success("Data is sent successfully");
+      await axios.post("/api/contact", data);
+      toast.success("Data sent successfully");
       reset();
-    } catch (error) {
-      console.error(error);
-      toast("Got an error")
+    } catch {
+      toast.error("Something went wrong");
     }
   };
 
-
   return (
-    <div className="py-12 bg-gray-50">
-
+    <section className="relative overflow-hidden bg-gray-50 py-12 md:py-20">
       <Heading
-        label="Contact Us"
+        label="Contact"
         title="Get In Touch"
         description="Get in touch with our experts for accounting, taxation, compliance, and business advisory support."
       />
 
-      <section className="relative bg-white flex flex-col md:flex-row justify-center px-0 md:px-16 lg:px-24 xl:px-24 py-12 gap-20">
+      {/* Brand glow */}
+      <div className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary-900/20 blur-[220px]" />
 
+      <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.25 }}
+        className="relative mx-auto mt-14 grid max-w-7xl grid-cols-1 gap-14 px-4 md:grid-cols-2 md:gap-20 md:px-16 lg:px-24"
+      >
+        {/* -------- Animated Divider (desktop only) -------- */}
+        <motion.div
+          initial={{ scaleY: 0, opacity: 0 }}
+          whileInView={{ scaleY: 1, opacity: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="
+            pointer-events-none absolute
+            left-1/2 top-10 hidden h-[80%] w-px
+            -translate-x-1/2
+            bg-gradient-to-b
+            from-transparent via-primary-900/30 to-transparent
+            md:block
+          "
+        />
 
+        {/* ---------------- LEFT ---------------- */}
+        <motion.div
+          variants={fadeUp}
+          className="relative flex flex-col items-center text-center md:items-start md:text-left"
+        >
+          {/* Soft background wash */}
+          <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br from-primary-900/5 via-transparent to-transparent" />
 
-
-        {/* Background Blur Circle */}
-        <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none mb-10 w-[140px] h-[140px] bg-primary-900 rounded-full blur-[200px]"></div>
-
-        {/* Left Text Content */}
-        <div className="text-center md:text-left mt-12">
-          {/* Community Avatars */}
-          <div className="flex items-center p-1.5 rounded-full border border-primary-900 text-xs w-fit mx-auto md:mx-0">
-            <div className="flex items-center">
-              <img className="w-7 h-7 rounded-full border border-primary-900" src="/images/about/user-1.png" alt="userImage1" />
-              <img className="w-7 h-7 rounded-full border border-primary-900 -translate-x-2" src="/images/about/user-2.png" alt="userImage2" />
-              <img className="w-7 h-7 rounded-full border border-primary-900 -translate-x-4" src="/images/about/user-3.png" alt="userImage3" />
+          {/* Trust pill */}
+          <div className="flex items-center gap-2 rounded-full border border-primary-900/30 bg-white px-3 py-1 text-xs shadow-sm">
+            <div className="flex">
+              <img src="/images/about/user-1.png" className="h-7 w-7 rounded-full border border-primary-900" />
+              <img src="/images/about/user-2.png" className="h-7 w-7 -translate-x-2 rounded-full border border-primary-900" />
+              <img src="/images/about/user-3.png" className="h-7 w-7 -translate-x-4 rounded-full border border-primary-900" />
             </div>
-            <p className="-translate-x-2 text-xs text-primary-900">Trusted by 20+ businesses</p>
+            <span className="-translate-x-2 text-primary-900">
+              Trusted by 20+ businesses
+            </span>
           </div>
 
-          {/* Heading */}
-          <h1 className="font-medium text-3xl px-1 md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-primary-900 to-primary-300 max-w-[470px] mt-4 mx-auto md:mx-0">
-            Get Expert Business Advice Today
-          </h1>
+          <h2 className="mt-6 max-w-xl bg-gradient-to-r from-primary-900 to-primary-500 bg-clip-text text-3xl font-semibold text-transparent md:text-5xl">
+            Get expert business advice today
+          </h2>
 
-          {/* Subtext */}
-          <p className="text-sm text-primary-900 max-w-[345px] mt-4 mx-auto md:mx-0">
-            Reach out to Unmatched Consultancy for guidance on accounting, taxation, compliance, and business strategy. Our experts are ready to help your business grow.
+          <p className="mt-4 max-w-md text-sm leading-relaxed text-slate-700">
+            Reach out to Unmatched Consultancy for accounting, taxation,
+            compliance, and strategic guidance — built for long-term growth.
           </p>
-        </div>
 
-        {/* Right Form */}
-        <div className="w-full max-w-lg max-md:mx-auto bg-primary-100/0 backdrop-blur-sm border border-white/10 rounded-xl p-4">
-          <form onSubmit={handleSubmit((data) => handleContact(data))} className="space-y-6" suppressHydrationWarning>
+          {/* Feature list */}
+          <div className="mt-10 grid w-full max-w-md gap-4 sm:grid-cols-2">
+            {[
+              { title: "Expert Consultants", desc: "20+ professionals" },
+              { title: "Fast Response", desc: "Replies within 24 hours" },
+              { title: "Pan-India Support", desc: "India & abroad" },
+              { title: "Compliance First", desc: "Zero-error process" },
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="rounded-xl border border-slate-200 bg-white/80 p-4 backdrop-blur"
+              >
+                <h4 className="text-sm font-semibold text-primary-900">
+                  {item.title}
+                </h4>
+                <p className="mt-1 text-xs text-slate-600">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* ---------------- FORM ---------------- */}
+        <motion.div
+          variants={fadeUp}
+          className="
+            w-full max-w-lg
+            rounded-2xl bg-white
+            p-6 md:p-8
+            shadow-2xl
+            ring-1 ring-primary-900/10
+          "
+        >
+          <form
+            onSubmit={handleSubmit(handleContact)}
+            className="space-y-5"
+            suppressHydrationWarning
+          >
             {/* Name */}
             <div>
-              <label className="block text-slate-900 text-sm mb-2">Name</label>
+              <label className="mb-1.5 block text-sm font-medium text-slate-700">
+                Name
+              </label>
               <input
-                type="text"
-                {...register('name')}
+                {...register("name")}
                 placeholder="Eden Johnson"
-                className="w-full bg-primary-100/5 border border-primary-900 rounded-lg px-4 py-3 text-slate-900/40 placeholder:text-slate-900/40 placeholder:text-sm focus:outline-none focus:border-primary-600 transition"
+                className="w-full rounded-lg border border-slate-300 px-4 py-3 text-sm focus:border-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-600/20"
               />
               {errors.name && (
-                <p className="text-red-500 text-xs mt-1">
-                  {errors.name.message}
-                </p>
+                <p className="mt-1 text-xs text-red-500">{errors.name.message}</p>
               )}
             </div>
 
             {/* Email */}
             <div>
-              <label className="block text-slate-900 text-sm mb-2">Email</label>
+              <label className="mb-1.5 block text-sm font-medium text-slate-700">
+                Email
+              </label>
               <input
-                type="email"
-                {...register('email')}
-                placeholder="Eden@example.com"
-                className="w-full bg-primary-100/5 border border-primary-900 rounded-lg px-4 py-3 text-slate-900/40 placeholder:text-slate-900/40 placeholder:text-sm focus:outline-none focus:border-primary-600 transition"
+                {...register("email")}
+                placeholder="eden@example.com"
+                className="w-full rounded-lg border border-slate-300 px-4 py-3 text-sm focus:border-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-600/20"
               />
               {errors.email && (
-                <p className="text-red-500 text-xs mt-1">
-                  {errors.email.message}
-                </p>
+                <p className="mt-1 text-xs text-red-500">{errors.email.message}</p>
               )}
             </div>
 
-            {/* Phone No */}
+            {/* Phone */}
             <div>
-              <label className="block text-slate-900 text-sm mb-2">Phone</label>
+              <label className="mb-1.5 block text-sm font-medium text-slate-700">
+                Phone
+              </label>
               <input
-                type="tel"
-                {...register('phoneNo')}
-                placeholder="9863548337"
-                className="w-full bg-primary-100/5 border border-primary-900 rounded-lg px-4 py-3 text-slate-900/40 placeholder:text-slate-900/40 placeholder:text-sm focus:outline-none focus:border-primary-600 transition"
+                {...register("phoneNo")}
+                placeholder="9876543210"
+                className="w-full rounded-lg border border-slate-300 px-4 py-3 text-sm focus:border-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-600/20"
               />
               {errors.phoneNo && (
-                <p className="text-red-500 text-xs mt-1">
-                  {errors.phoneNo.message}
-                </p>
+                <p className="mt-1 text-xs text-red-500">{errors.phoneNo.message}</p>
               )}
             </div>
 
             {/* Message */}
             <div>
-              <label className="block text-slate-900 text-sm mb-2">Message</label>
+              <label className="mb-1.5 block text-sm font-medium text-slate-700">
+                Message
+              </label>
               <textarea
-                {...register('message')}
-                placeholder="Write your message here..."
+                {...register("message")}
                 rows={4}
-                className="w-full bg-primary-100/5 border border-primary-900 rounded-lg px-4 py-3 text-slate-900/40 placeholder:text-slate-900/40 placeholder:text-sm focus:outline-none focus:border-primary-600 transition resize-none"
+                placeholder="Write your message here..."
+                className="w-full resize-none rounded-lg border border-slate-300 px-4 py-3 text-sm focus:border-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-600/20"
               />
               {errors.message && (
-                <p className="text-red-500 text-xs mt-1">
-                  {errors.message.message}
-                </p>
+                <p className="mt-1 text-xs text-red-500">{errors.message.message}</p>
               )}
             </div>
 
             {/* Footer */}
-            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-              <p className="text-xs md:text-sm text-slate-900/90 max-w-xs">
-                By submitting, you agree to our <span className="text-slate-900">Terms</span> and <span className="text-slate-900">Privacy Policy</span>.
+            <div className="flex flex-col gap-4 pt-2 sm:flex-row sm:items-center sm:justify-between">
+              <p className="max-w-xs text-xs text-slate-600">
+                By submitting, you agree to our{" "}
+                <span className="font-medium text-slate-800">Terms</span> &{" "}
+                <span className="font-medium text-slate-800">Privacy Policy</span>.
               </p>
-              {/* <button 
-                type="submit" 
-                className="bg-gradient-to-r from-primary-900 to-primary-600 hover:from-primary-600 hover:to-primary-900 text-white text-sm px-8 md:px-16 py-3 rounded-full transition duration-300 cursor-pointer"
-              >
-                Submit
-              </button> */}
-              <button
+
+              <AnimatedButton
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-gradient-to-r from-secondary-500 to-secondary-300 hover:from-secondary-600 hover:to-secondary-900 text-white text-sm px-8 md:px-16 py-3 rounded-full transition duration-300 cursor-pointer"
-              >
-                {isSubmitting ? "Submitting..." : "Submit"}
-              </button>
-
+                title={isSubmitting ? "Submitting..." : "Submit"}
+              />
             </div>
           </form>
-
-        </div>
-      </section>
-    </div>
+        </motion.div>
+      </motion.div>
+    </section>
   );
 }
