@@ -181,33 +181,47 @@ export default function Navbar() {
 
   /* ------------------ Animations (same style) ------------------ */
 
-  const fadeDown = {
-    hidden: { opacity: 0, y: -16 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1], },
+ const fadeDown = {
+  hidden: { opacity: 0, y: -16 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.4,
+      ease: "easeOut",
     },
-  };
+  },
+};
 
-  const mobileMenuVariants = {
-    hidden: { opacity: 0, y: -10 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: { staggerChildren: 0.08 },
+const mobileMenuVariants = {
+  hidden: { opacity: 0, y: -10 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      staggerChildren: 0.08,
+      ease: "easeOut",
     },
-    exit: { opacity: 0, y: -10, transition: { duration: 0.2 } },
-  };
+  },
+  exit: {
+    opacity: 0,
+    y: -10,
+    transition: { duration: 0.2, ease: "easeIn" },
+  },
+};
 
-  const mobileItem = {
-    hidden: { opacity: 0, y: -8 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.25, ease: [0.16, 1, 0.3, 1], },
+const mobileItem = {
+  hidden: { opacity: 0, y: -8 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.25,
+      ease: "easeOut",
     },
-  };
+  },
+};
+
 
   return (
     <>
