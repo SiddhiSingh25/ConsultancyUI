@@ -109,7 +109,7 @@ export default function Footer() {
 
 
           <Link href="/" className="flex items-center">
-            <div className="relative h-24 sm:h-24 md:h-32 w-[120px] sm:w-[140px] md:w-[160px]">
+            <div className="relative h-24 sm:h-24 md:h-28 w-[120px] sm:w-[140px] md:w-[160px]">
               <Image
                 src="/images/logo-light.png"
                 alt="Company Logo"
