@@ -61,16 +61,23 @@ export default function Start() {
         <motion.div variants={itemVariants}>
           <Link
             href="/"
-            className=" mt-15 md:mt-32 flex items-center gap-2 border border-primary-800 rounded-full p-1 px-3 text-sm font-medium text-primary family-medium bg-white"
+            className=" mt-20 md:mt-32 flex items-center gap-2 border border-primary-800 rounded-full p-1 px-3 text-sm font-medium text-primary family-medium bg-white"
           >
             <span>Unmatched solution of all business problems</span>
           </Link>
         </motion.div>
 
         {/* Heading */}
-        <motion.h1
+       <motion.h1
           variants={itemVariants}
-          className="text-center text-4xl leading-[68px] md:text-6xl md:leading-[80px] md:max-w-5xl text-primary-900 mt-6 family-mainheading"
+          className="
+            mx-auto mt-6 max-w-5xl text-center
+            text-3xl leading-snug
+            sm:text-4xl sm:leading-tight
+            md:text-6xl md:leading-[80px]
+            text-primary-900
+            family-mainheading
+          "
         >
           Unmatched Consultancy — Your Trusted Business Partner
         </motion.h1>
