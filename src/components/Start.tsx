@@ -96,10 +96,11 @@ import CountUp from "react-countup";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { FaArrowRightLong } from "react-icons/fa6";
+import type { Variants } from "framer-motion";
 
 /* ------------------ SAME ANIMATION STYLE ------------------ */
 
-const sectionVariants = {
+const sectionVariants : Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
@@ -110,7 +111,7 @@ const sectionVariants = {
   },
 };
 
-const containerVariants = {
+const containerVariants : Variants = {
   hidden: {},
   show: {
     transition: {
@@ -119,7 +120,7 @@ const containerVariants = {
   },
 };
 
-const itemVariants = {
+const itemVariants : Variants = {
   hidden: { opacity: 0, y: 24 },
   show: {
     opacity: 1,

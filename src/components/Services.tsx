@@ -4,6 +4,8 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { servicesData } from "../data/services-data";
 import Heading from "./common/Heading";
+import type { Variants } from "framer-motion";
+
 
 type ServiceProp = {
   limit?: number;
@@ -11,7 +13,7 @@ type ServiceProp = {
 
 /* ------------------ Minimal Scroll Animations ------------------ */
 
-const sectionVariants = {
+const sectionVariants : Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
@@ -19,7 +21,7 @@ const sectionVariants = {
   },
 };
 
-const containerVariants = {
+const containerVariants :Variants = {
   hidden: {},
   show: {
     transition: {
@@ -28,7 +30,7 @@ const containerVariants = {
   },
 };
 
-const cardVariants = {
+const cardVariants : Variants = {
   hidden: { opacity: 0, y: 16 },
   show: {
     opacity: 1,

@@ -7,6 +7,7 @@ import { MdEmail } from "react-icons/md";
 import { LiaLinkedinIn } from "react-icons/lia";
 import { teamData } from "../data/teams-data.js";
 import Heading from "./common/Heading";
+import type { Variants } from "framer-motion";
 
 type TeamProps = {
   limit?: number;
@@ -14,7 +15,7 @@ type TeamProps = {
 
 /* ------------------ SAME ANIMATION AS SERVICES ------------------ */
 
-const sectionVariants = {
+const sectionVariants : Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
@@ -25,7 +26,7 @@ const sectionVariants = {
   },
 };
 
-const containerVariants = {
+const containerVariants : Variants = {
   hidden: {},
   show: {
     transition: {
@@ -34,7 +35,7 @@ const containerVariants = {
   },
 };
 
-const cardVariants = {
+const cardVariants : Variants = {
   hidden: { opacity: 0, y: 24 },
   show: {
     opacity: 1,

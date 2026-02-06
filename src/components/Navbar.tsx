@@ -175,13 +175,15 @@ import { IoLogoLinkedin } from "react-icons/io5";
 import { FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { MdOutlineMailOutline } from "react-icons/md";
+import type { Variants } from "framer-motion";
+
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   /* ------------------ Animations (same style) ------------------ */
 
- const fadeDown = {
+const fadeDown: Variants = {
   hidden: { opacity: 0, y: -16 },
   show: {
     opacity: 1,
@@ -193,7 +195,8 @@ export default function Navbar() {
   },
 };
 
-const mobileMenuVariants = {
+
+const mobileMenuVariants: Variants = {
   hidden: { opacity: 0, y: -10 },
   show: {
     opacity: 1,
@@ -206,11 +209,14 @@ const mobileMenuVariants = {
   exit: {
     opacity: 0,
     y: -10,
-    transition: { duration: 0.2, ease: "easeIn" },
+    transition: {
+      duration: 0.2,
+      ease: "easeIn",
+    },
   },
 };
 
-const mobileItem = {
+const mobileItem: Variants = {
   hidden: { opacity: 0, y: -8 },
   show: {
     opacity: 1,
@@ -221,6 +227,7 @@ const mobileItem = {
     },
   },
 };
+
 
 
   return (
