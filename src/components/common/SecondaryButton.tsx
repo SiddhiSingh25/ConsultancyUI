@@ -4,13 +4,35 @@ const SecondaryButton = ({ href, title }: { href: string; title: string }) => {
   return (
     <Link
       href={href}
-      className="group relative inline-flex overflow-hidden rounded-full border border-secondary-600"
+      className="
+        group relative inline-flex overflow-hidden rounded-full
+        border border-secondary-600
+      "
     >
-      {/* Hover overlay (primary color) */}
-      <span className="absolute inset-0 bg-secondary-600 z-0 -translate-x-full transition-transform duration-300 ease-out group-hover:translate-x-0" />
+      {/* Hover overlay */}
+      <span
+        className="
+          absolute inset-0 z-0
+          bg-secondary-600
+          -translate-x-full
+          transition-transform duration-300 ease-out
+          group-hover:translate-x-0
+        "
+      />
 
       {/* Content */}
-      <span className="relative z-10 inline-flex items-center gap-3 px-10 py-3 font-medium text-secondary-600 transition-colors duration-300 group-hover:text-white">
+      <span
+        className="
+          relative z-10 inline-flex items-center gap-3
+          px-6 py-3
+          sm:px-10
+          font-medium
+          text-secondary-600
+          whitespace-nowrap
+          transition-colors duration-300
+          group-hover:text-white
+        "
+      >
         {title}
         <svg width="14" height="14" viewBox="0 0 13 12" fill="none">
           <path

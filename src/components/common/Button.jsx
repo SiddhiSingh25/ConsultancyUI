@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import Link from "next/link";
 
 const Button = ({ href, title }) => {
   return (
@@ -6,14 +6,22 @@ const Button = ({ href, title }) => {
       href={href}
       className="group relative inline-flex overflow-hidden rounded-full"
     >
-      {/* Default background (blue) */}
+      {/* Default background */}
       <span className="absolute inset-0 bg-primary-900 z-0" />
 
-      {/* Hover overlay (black) */}
+      {/* Hover overlay */}
       <span className="absolute inset-0 bg-secondary-600 z-10 -translate-x-full transition-transform duration-300 ease-out group-hover:translate-x-0" />
 
       {/* Content */}
-      <span className="relative z-20 inline-flex items-center gap-3 px-10 py-3 text-white font-medium">
+      <span
+        className="
+          relative z-20 inline-flex items-center gap-3
+          px-6 py-3
+          sm:px-10
+          text-white font-medium
+          whitespace-nowrap
+        "
+      >
         {title}
         <svg width="14" height="14" viewBox="0 0 13 12" fill="none">
           <path

@@ -9,18 +9,18 @@ import SecondaryButton from "./common/SecondaryButton";
 
 /* ------------------ SAME ANIMATION STYLE ------------------ */
 
-const sectionVariants : Variants = {
+const sectionVariants: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
     transition: {
       duration: 0.6,
-      ease:[0.16, 1, 0.3, 1],
+      ease: [0.16, 1, 0.3, 1],
     },
   },
 };
 
-const containerVariants : Variants = {
+const containerVariants: Variants = {
   hidden: {},
   show: {
     transition: {
@@ -29,7 +29,7 @@ const containerVariants : Variants = {
   },
 };
 
-const itemVariants : Variants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, y: 24 },
   show: {
     opacity: 1,
@@ -68,7 +68,7 @@ export default function Start() {
         </motion.div>
 
         {/* Heading */}
-       <motion.h1
+        <motion.h1
           variants={itemVariants}
           className="
             mx-auto mt-6 max-w-5xl text-center
@@ -82,10 +82,16 @@ export default function Start() {
           Unmatched Consultancy — Your Trusted Business Partner
         </motion.h1>
 
-        {/* Subtext */}
         <motion.p
           variants={itemVariants}
-          className="text-center text-base text-slate-800 max-w-2xl mt-2"
+          className="
+    mx-auto mt-3 text-center
+    text-sm leading-relaxed
+    sm:text-base sm:leading-relaxed
+    max-w-[90%]
+    sm:max-w-2xl
+    text-slate-700
+  "
         >
           Unmatched Consultancy helps startups and businesses stay compliant,
           streamline operations, and grow with confidence, backed by 20+ experts
@@ -109,14 +115,14 @@ export default function Start() {
               Our Services
             </button>
           </Link> */}
-        <Button
-          href="/contact"
-          title="Get Started"
-        />
-        <SecondaryButton
-          href="/services"
-          title="Our Services"
-        />
+          <Button
+            href="/contact"
+            title="Get Started"
+          />
+          <SecondaryButton
+            href="/services"
+            title="Our Services"
+          />
         </motion.div>
 
         {/* Stats */}
