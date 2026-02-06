@@ -6,7 +6,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { toast } from "react-toastify";
 import Heading from "./common/Heading";
-import { motion } from "framer-motion";
+import { motion, Variants, easeInOut, easeOut } from "framer-motion";
 import AnimatedButton from "./common/AnimatedButton";
 
 /* ---------------- Schema ---------------- */
@@ -25,7 +25,7 @@ type ContactFormData = yup.InferType<typeof schema>;
 
 /* ---------------- Animations ---------------- */
 
-const container = {
+const container: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
@@ -33,12 +33,12 @@ const container = {
   },
 };
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 28 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
+    transition: { duration: 0.6, ease: easeInOut }, // ✅ fixed
   },
 };
 
@@ -86,7 +86,7 @@ export default function Contact() {
         <motion.div
           initial={{ scaleY: 0, opacity: 0 }}
           whileInView={{ scaleY: 1, opacity: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.8, ease: easeOut }} // ✅ fixed
           className="
             pointer-events-none absolute
             left-1/2 top-10 hidden h-[80%] w-px
