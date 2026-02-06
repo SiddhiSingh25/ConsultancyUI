@@ -6,6 +6,7 @@ import Link from "next/link";
 import type { Variants } from "framer-motion";
 import Button from "./common/Button";
 import SecondaryButton from "./common/SecondaryButton";
+import { stats } from "../data/stats-data";
 
 /* ------------------ SAME ANIMATION STYLE ------------------ */
 
@@ -54,7 +55,7 @@ export default function Start() {
       viewport={{ once: true, amount: 0.3 }}
     >
       <motion.main
-        className="flex flex-col items-center max-md:px-2"
+        className="flex flex-col items-center mb-10 md:mb-12 max-md:px-2"
         variants={containerVariants}
       >
         {/* Announcement */}
@@ -85,13 +86,13 @@ export default function Start() {
         <motion.p
           variants={itemVariants}
           className="
-    mx-auto mt-3 text-center
-    text-sm leading-relaxed
-    sm:text-base sm:leading-relaxed
-    max-w-[90%]
-    sm:max-w-2xl
-    text-slate-700
-  "
+            mx-auto mt-3 text-center
+            text-sm leading-relaxed
+            sm:text-base sm:leading-relaxed
+            max-w-[90%]
+            sm:max-w-2xl
+            text-slate-700
+          "
         >
           Unmatched Consultancy helps startups and businesses stay compliant,
           streamline operations, and grow with confidence, backed by 20+ experts
@@ -103,18 +104,6 @@ export default function Start() {
           variants={itemVariants}
           className="flex items-center gap-4 mt-8"
         >
-          {/* <Link href="/contact">
-            <button className="flex items-center gap-2 bg-secondary-600 hover:bg-secondary-700 text-white active:scale-95 rounded-lg px-7 h-11 transition">
-              Get Started
-              <FaArrowRightLong className="text-base" />
-            </button>
-          </Link>
-
-          <Link href="/services">
-            <button className="border border-secondary-500 hover:bg-white transition text-secondary-600 active:scale-95 rounded-lg px-8 h-11">
-              Our Services
-            </button>
-          </Link> */}
           <Button
             href="/contact"
             title="Get Started"
@@ -128,19 +117,35 @@ export default function Start() {
         {/* Stats */}
         <motion.div
           variants={containerVariants}
-          className="grid grid-cols-2 md:grid-cols-4 gap-8 py-18 max-w-[930px] w-full mt-8"
+          className="
+            mx-auto mt-10 md:mt-14 w-full max-w-4xl
+            grid grid-cols-2 gap-y-8 gap-x-6
+            sm:grid-cols-2
+            md:grid-cols-4 md:gap-x-10
+          "
         >
-          {[
-            { end: 5, label: "Years of Expertise", suffix: "+" },
-            { end: 50, label: "Satisfied Clients", suffix: "k+" },
-            { end: 20, label: "Projects Completed", suffix: "+" },
-            { end: 3, label: "Countries Served", suffix: "+" },
-          ].map((stat, idx) => (
-            <motion.div key={idx} variants={itemVariants} className="text-center">
-              <h2 className="font-medium text-2xl md:text-3xl text-primary-800">
-                <CountUp start={0} end={stat.end} duration={2} />{stat.suffix}
+          {stats.map((stat, idx) => (
+            <motion.div
+              key={idx}
+              variants={itemVariants}
+              className="flex flex-col items-center text-center"
+            >
+              <h2
+                className="
+          text-3xl font-semibold text-primary-900
+          md:text-4xl
+        "
+              >
+                <CountUp start={0} end={stat.end} duration={2} />
+                {stat.suffix}
               </h2>
-              <p className="text-xs md:text-sm text-primary-500">
+
+              <p
+                className="
+          mt-1 text-sm font-medium
+          text-primary-600
+        "
+              >
                 {stat.label}
               </p>
             </motion.div>

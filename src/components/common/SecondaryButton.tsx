@@ -13,7 +13,7 @@ const SecondaryButton = ({ href, title }: { href: string; title: string }) => {
       <span
         className="
           absolute inset-0 z-0
-          bg-secondary-600
+          bg-primary-900
           -translate-x-full
           transition-transform duration-300 ease-out
           group-hover:translate-x-0
