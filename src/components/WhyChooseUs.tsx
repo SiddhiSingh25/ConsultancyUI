@@ -7,7 +7,10 @@ const WhyChooseUs = () => {
   <div className="max-w-7xl mx-auto">
 
 
-    <Heading title={"Why Choose Us"} description= {`At Unmatched Consultancy, we don’t just provide services — we become a part of your business journey.`} />
+    <Heading 
+      label="Why Us?"
+      title={"Why Choose Us?"} 
+      description= {`At Unmatched Consultancy, we don’t just provide services — we become a part of your business journey.`} />
 
    
 

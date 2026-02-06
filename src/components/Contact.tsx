@@ -57,7 +57,8 @@ export default function Contact() {
     <>
 
       <Heading
-        title="Contact Us"
+        label="Contact Us"
+        title="Get In Touch"
         description="Get in touch with our experts for accounting, taxation, compliance, and business advisory support."
       />
 

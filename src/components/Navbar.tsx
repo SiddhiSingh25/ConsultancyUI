@@ -237,9 +237,9 @@ const mobileItem: Variants = {
         variants={fadeDown}
         initial="hidden"
         animate="show"
-        className="w-full bg-primary-800 text-white flex flex-col md:flex-row justify-between items-center px-6 md:px-16 lg:px-24 xl:px-32 py-3 gap-0"
+        className="w-full bg-primary-800 text-white flex flex-col md:flex-row justify-between items-center px-6 md:px-16 lg:px-24 xl:px-32 py-2 gap-0"
       >
-        <p className="text-center md:text-left text-sm md:text-base">
+        <p className="text-center md:text-left text-sm md:text-base mt-1 family-light">
           <a
             href="mailto:unmatchedconsultancy@gmail.com"
             className="inline-flex items-center gap-1 hover:text-secondary-500 transition"
@@ -263,7 +263,7 @@ const mobileItem: Variants = {
           {[IoLogoLinkedin, MdOutlineMailOutline, FaXTwitter, FaInstagram].map(
             (Icon, i) => (
               <Link key={i} href="/">
-                <Icon className="text-secondary-500 text-xl hover:text-secondary-600 transition active:scale-95" />
+                <Icon className="text-secondary-500 text-lg ml-1 hover:text-secondary-600 transition active:scale-95" />
               </Link>
             )
           )}
@@ -292,7 +292,7 @@ const mobileItem: Variants = {
           </Link>
 
           {/* Desktop Menu */}
-          <ul className="hidden md:flex items-center gap-8 font-medium text-sm">
+          <ul className="hidden md:flex items-center gap-8 family-semibold text-sm">
             {[
               ["Home", "/"],
               ["About Us", "/about"],
@@ -315,9 +315,15 @@ const mobileItem: Variants = {
             <li>
               <Link
                 href="/contact"
-                className="ml-4 inline-flex items-center rounded-full bg-primary-900 px-5 py-2 text-white text-sm font-semibold hover:bg-primary-700 transition"
+                className="ml-4 inline-flex items-center rounded-full bg-primary-900 px-5 py-2 text-white text-sm font-semibold hover:bg-secondary-600 transition"
               >
-                Contact Us
+                Contact Us &nbsp;
+                  <svg width="14" height="14" viewBox="0 0 13 12" fill="none">
+              <path
+            d="M12.53 6.53a.75.75 0 0 0 0-1.06L7.757.697a.75.75 0 1 0-1.06 1.06L10.939 6l-4.242 4.243a.75.75 0 0 0 1.06 1.06zM0 6v.75h12v-1.5H0z"
+            fill="white"
+          />
+            </svg>
               </Link>
             </li>
           </ul>

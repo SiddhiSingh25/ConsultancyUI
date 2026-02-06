@@ -33,7 +33,8 @@
 
 
 body {
-  @apply font-sans antialiased;
+  /* @apply font-sans antialiased; */
+  font-family: "Regular", sans-serif;
 }
 
 /* 
@@ -55,4 +56,81 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+} */
+
+@font-face {
+  font-family: "Black";
+  src: url("../../public/fonts/Poppins-Black.ttf") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bold";
+  src: url("../../public/fonts/Poppins-Bold.ttf") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Semibold";
+  src: url("../../public/fonts/Poppins-SemiBold.ttf") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Medium";
+  src: url("../../public/fonts/Poppins-Medium.ttf") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Regular";
+  src: url("../../public/fonts/Poppins-Regular.ttf") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Light";
+  src: url("../../public/fonts/Poppins-Light.ttf") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+.family-mainheading {
+  font-family: "Black", sans-serif;
+}
+
+.family-bold {
+  font-family: "Bold", sans-serif;
+}
+
+.family-semibold {
+  font-family: "Semibold", sans-serif;
+}
+
+.family-medium {
+  font-family: "Medium", sans-serif;
+}
+
+.family-regular {
+  font-family: "Regular", sans-serif;
+}
+
+.family-light {
+  font-family: "Light", sans-serif;
+}
+
+
+/* .font-normal {
+  font-family: "Normal", sans-serif;
 } */

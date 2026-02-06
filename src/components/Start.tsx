@@ -97,6 +97,8 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { FaArrowRightLong } from "react-icons/fa6";
 import type { Variants } from "framer-motion";
+import Button from "./common/Button";
+import SecondaryButton from "./common/SecondaryButton";
 
 /* ------------------ SAME ANIMATION STYLE ------------------ */
 
@@ -152,11 +154,8 @@ export default function Start() {
         <motion.div variants={itemVariants}>
           <Link
             href="/"
-            className="mt-32 flex items-center gap-2 border border-primary-400 rounded-full p-1 pr-3 text-sm font-medium text-primary bg-white"
+            className="mt-32 flex items-center gap-2 border border-primary-800 rounded-full p-1 px-3 text-sm font-medium text-primary family-medium bg-white"
           >
-            <span className="bg-secondary-400 text-white text-xs px-3 py-1 rounded-full">
-              NEW
-            </span>
             <span>Unmatched solution of all business problems</span>
           </Link>
         </motion.div>
@@ -164,7 +163,7 @@ export default function Start() {
         {/* Heading */}
         <motion.h1
           variants={itemVariants}
-          className="text-center text-5xl leading-[68px] md:text-6xl md:leading-[80px] font-semibold max-w-4xl text-primary-900 mt-6"
+          className="text-center text-5xl leading-[68px] md:text-6xl md:leading-[80px] max-w-5xl text-primary-900 mt-6 family-mainheading"
         >
           Unmatched Consultancy — Your Trusted Business Partner
         </motion.h1>
@@ -172,7 +171,7 @@ export default function Start() {
         {/* Subtext */}
         <motion.p
           variants={itemVariants}
-          className="text-center text-base text-slate-800 max-w-lg mt-2"
+          className="text-center text-base text-slate-800 max-w-2xl mt-2"
         >
           Unmatched Consultancy helps startups and businesses stay compliant,
           streamline operations, and grow with confidence, backed by 20+ experts
@@ -184,7 +183,7 @@ export default function Start() {
           variants={itemVariants}
           className="flex items-center gap-4 mt-8"
         >
-          <Link href="/contact">
+          {/* <Link href="/contact">
             <button className="flex items-center gap-2 bg-secondary-600 hover:bg-secondary-700 text-white active:scale-95 rounded-lg px-7 h-11 transition">
               Get Started
               <FaArrowRightLong className="text-base" />
@@ -195,7 +194,15 @@ export default function Start() {
             <button className="border border-secondary-500 hover:bg-white transition text-secondary-600 active:scale-95 rounded-lg px-8 h-11">
               Our Services
             </button>
-          </Link>
+          </Link> */}
+        <Button
+          href="/contact"
+          title="Get Started"
+        />
+        <SecondaryButton
+          href="/services"
+          title="Our Services"
+        />
         </motion.div>
 
         {/* Stats */}

@@ -117,7 +117,8 @@ export default function Blogs() {
       viewport={{ once: true, amount: 0.2 }}
     >
       <Heading
-        title="Latest Blog"
+        label="Blog & Article"
+        title="Our Latest Insights"
         description="Stay ahead of the curve with fresh content on code, design, startups, and everything in between."
       />
 

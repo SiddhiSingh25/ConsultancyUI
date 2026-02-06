@@ -38,7 +38,10 @@ const FaqSection = () => {
 
     <>
 <div className="py-6">
-      <Heading title={"Frequently Asked Questions"} description="Everything you need to know about our services."
+      <Heading 
+      label="FAQ"
+      title={"Get Your Have a Questions?"} 
+      description="Everything you need to know about our services."
       />
 
       <section className="py-12 px-4 md:px-16 lg:px-24 xl:px-32 flex flex-col md:flex-row items-center justify-center gap-10">

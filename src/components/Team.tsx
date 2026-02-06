@@ -65,6 +65,7 @@ export default function Team({ limit }: TeamProps) {
     >
       {/* Heading */}
       <Heading
+        label="Team"
         title="Meet Our Team"
         description="A dynamic team delivering unmatched business solutions."
       />

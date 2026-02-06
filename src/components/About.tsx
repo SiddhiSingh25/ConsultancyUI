@@ -164,6 +164,7 @@ const About = () => {
       viewport={{ once: true, amount: 0.2 }}
     >
       <Heading
+        label="Know Us Better"
         title="About Us"
         description="Providing expert accounting, taxation, and advisory services."
       />
@@ -235,7 +236,7 @@ const About = () => {
             client’s needs.
           </p>
 
-          <p className="mt-4">
+          <p className="mt-4 mb-4">
             Backed by a team of 20+ experienced professionals with strong
             technical and financial expertise, we treat every client’s business
             as our own.

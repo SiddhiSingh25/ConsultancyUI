@@ -60,7 +60,8 @@ export default function Services({ limit }: ServiceProp) {
       {/* Heading */}
       <motion.div variants={cardVariants}>
         <Heading
-          title="Our Services"
+          label="Service"
+          title="What we Offer"
           description={`Expert accounting, taxation, and advisory services designed to help
           businesses grow with clarity and confidence.`}
         />
