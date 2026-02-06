@@ -109,7 +109,7 @@
 
 import Link from "next/link";
 
-const ServiceCard = ({ id, icon: Icon, title, description }) => {
+const ServiceCard = ({ id, icon: Icon, title, description }: { id: string; icon: any; title: string; description: string }) => {
   return (
     <article
       className="

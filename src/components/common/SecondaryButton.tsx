@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const SecondaryButton = ({ href, title }) => {
+const SecondaryButton = ({ href, title }: { href: string; title: string }) => {
   return (
     <Link
       href={href}
