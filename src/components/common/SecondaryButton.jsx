@@ -7,7 +7,7 @@ const SecondaryButton = ({ href, title }) => {
       className="group relative inline-flex overflow-hidden rounded-full border border-secondary-600"
     >
       {/* Hover overlay (primary color) */}
-      <span className="absolute inset-0 bg-primary-900 z-0 -translate-x-full transition-transform duration-300 ease-out group-hover:translate-x-0" />
+      <span className="absolute inset-0 bg-secondary-600 z-0 -translate-x-full transition-transform duration-300 ease-out group-hover:translate-x-0" />
 
       {/* Content */}
       <span className="relative z-10 inline-flex items-center gap-3 px-10 py-3 font-medium text-secondary-600 transition-colors duration-300 group-hover:text-white">
