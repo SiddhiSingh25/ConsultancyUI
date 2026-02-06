@@ -280,7 +280,7 @@ const mobileItem: Variants = {
         <div className="flex items-center justify-between h-[72px]">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <div className="relative h-20 sm:h-11 md:h-20 w-[120px] sm:w-[140px] md:w-[160px]">
+            <div className="relative h-20 sm:h-11 md:h-20 w-[120px] sm:w-[140px] md:w-[160px] ">
               <Image
                 src="/images/logo.png"
                 alt="Company Logo"

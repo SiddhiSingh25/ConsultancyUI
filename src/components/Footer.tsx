@@ -118,7 +118,7 @@ export default function Footer() {
                 sizes="(max-width: 640px) 120px,
              (max-width: 768px) 140px,
              160px"
-                className="object-contain md:object-cover"
+                className="object-contain md:object-contain"
               />
             </div>
           </Link>
