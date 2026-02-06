@@ -157,7 +157,7 @@ const About = () => {
 
   return (
     <motion.div
-      className="py-8"
+      className="py-12 bg-gray-50"
       variants={sectionVariants}
       initial="hidden"
       whileInView="show"

@@ -54,7 +54,7 @@ export default function Contact() {
 
 
   return (
-    <>
+    <div className="py-12 bg-gray-50">
 
       <Heading
         label="Contact Us"
@@ -184,6 +184,6 @@ export default function Contact() {
 
         </div>
       </section>
-    </>
+    </div>
   );
 }

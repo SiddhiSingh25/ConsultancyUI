@@ -2,6 +2,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { detailedServicesData } from "../../../data/detailedServices-data";
 import { FaCheck } from "react-icons/fa";
+import Heading from "@/components/common/Heading";
 
 type PageProps = {
   params: Promise<{ id: string }>;
@@ -17,15 +18,20 @@ const Page = async ({ params }: PageProps) => {
   }
 
   return (
-    <div className="py-8">
+    <div className="py-12 bg-gray-50">
       {/* Header */}
-      <h1 className="text-3xl text-primary-900 font-semibold text-center">
+      {/* <h1 className="text-3xl text-primary-900 font-semibold text-center">
         {service.title}
       </h1>
 
       <p className="text-sm text-primary-600 text-center mt-2 max-w-md mx-auto">
         {service.shortContent}
-      </p>
+      </p> */}
+      <Heading
+        label="Service in Detail"
+        title={service.title}
+        description={service.shortContent}
+      />
 
       {/* Main Section */}
       <section className="py-12 px-4 md:px-16 lg:px-24 xl:px-24 flex flex-col md:flex-row items-center justify-center gap-10">
