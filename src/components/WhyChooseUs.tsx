@@ -1,7 +1,7 @@
 import React from 'react'
 import Heading from './common/Heading'
 
-const WhyChoseUs = () => {
+const WhyChooseUs = () => {
   return (
     <section className="bg-white py-16 px-4">
   <div className="max-w-7xl mx-auto">
@@ -62,4 +62,4 @@ const WhyChoseUs = () => {
   )
 }
 
-export default WhyChoseUs
+export default WhyChooseUs
