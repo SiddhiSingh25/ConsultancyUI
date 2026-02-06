@@ -1,12 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
+import  { useState } from "react";
 import { IoChatbubbleEllipsesSharp, IoClose } from "react-icons/io5";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 /* Validation Schema */

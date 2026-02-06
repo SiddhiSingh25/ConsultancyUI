@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 import Heading from "./common/Heading";
 import Image from "next/image";
 
@@ -37,7 +37,7 @@ const FaqSection = () => {
   return (
 
     <>
-<div className="py-6">
+<div className="py-12 bg-gray-50">
       <Heading 
       label="FAQ"
       title={"Get Your Have a Questions?"} 

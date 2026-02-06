@@ -1,9 +1,8 @@
-import React from 'react'
 import Heading from './common/Heading'
 
 const WhyChooseUs = () => {
   return (
-    <section className="bg-white py-16 px-4">
+    <section className="bg-gray-50 py-12 px-4">
   <div className="max-w-7xl mx-auto">
 
 

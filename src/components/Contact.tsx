@@ -4,7 +4,7 @@ import axios from 'axios'
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import {  toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import Heading from './common/Heading';
 
 const schema = yup
@@ -12,13 +12,13 @@ const schema = yup
   .shape({
     name: yup.string().required(),
     email: yup.string().email().required(),
-   phoneNo: yup
-  .string()
-  .required("Phone number is required")
-  .matches(
-    /^[6-9]\d{9}$/,
-    "Enter a valid 10-digit mobile number"
-  ),
+    phoneNo: yup
+      .string()
+      .required("Phone number is required")
+      .matches(
+        /^[6-9]\d{9}$/,
+        "Enter a valid 10-digit mobile number"
+      ),
     message: yup.string().required(),
   })
   .required();
@@ -26,8 +26,7 @@ const schema = yup
 type ContactFormData = yup.InferType<typeof schema>;
 
 export default function Contact() {
-
-
+  s
   const {
     register,
     handleSubmit,
@@ -62,7 +61,7 @@ export default function Contact() {
         description="Get in touch with our experts for accounting, taxation, compliance, and business advisory support."
       />
 
-      <section className="relative bg-white flex flex-col md:flex-row justify-center px-0 md:px-16 lg:px-24 xl:px-24 py-12 gap-20">
+      <section className="relative bg-gray-50 flex flex-col md:flex-row justify-center px-0 md:px-16 lg:px-24 xl:px-24 py-12 gap-20">
 
 
 
