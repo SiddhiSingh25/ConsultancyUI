@@ -12,7 +12,7 @@ interface AlertProps {
 
 export default function Alert({ type, message, open, onClose }: AlertProps) {
   const bgColor = type === "success" ? "bg-primary-900" : "bg-red-600";
-  const icon = type === "success" ? "✅" : "⚠️";
+  const icon = type === "success" ? " " : " ";
 
   // Auto-close after 3 seconds
   useEffect(() => {
