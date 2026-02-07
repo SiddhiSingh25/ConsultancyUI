@@ -114,7 +114,7 @@ const ServiceCard = ({ id, icon: Icon, title, description }: { id: string; icon:
     <article
       className="
         group relative h-full overflow-hidden rounded-2xl
-        bg-primary-700 p-8
+        bg-primary-700 md:p-8 p-5
         transition-all duration-300
       "
     >
