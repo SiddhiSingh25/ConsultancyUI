@@ -8,6 +8,8 @@ import { toast } from "react-toastify";
 import Heading from "./common/Heading";
 import { motion, Variants, easeInOut, easeOut } from "framer-motion";
 import AnimatedButton from "./common/AnimatedButton";
+import { useState } from "react";
+import Alert from "./common/Alert";
 
 /* ---------------- Schema ---------------- */
 
@@ -53,18 +55,31 @@ export default function Contact() {
   } = useForm<ContactFormData>({
     resolver: yupResolver(schema),
   });
+  const [alert, setAlert] = useState<{ type: "success" | "error"; message: string } | null>(null);
 
   const handleContact = async (data: ContactFormData) => {
     try {
       await axios.post("/api/contact", data);
-      toast.success("Data sent successfully");
+      // toast.success("Thank you for reaching out! We’ll get back to you soon.");
+      setAlert({ type: "success", message: "Your message has been sent! We’ll get back to you shortly." });
       reset();
     } catch {
-      toast.error("Something went wrong");
+      // toast.error("⚠️ Oops! Something went wrong. Please try again later.");
+      setAlert({ type: "error", message: "⚠️ Oops! Something went wrong. Please try again later." });
     }
   };
 
   return (
+    <>
+       {alert && (
+        <Alert
+          open={!!alert}
+          type={alert.type}
+          message={alert.message}
+          onClose={() => setAlert(null)}
+        />
+      )}
+
     <section className="relative overflow-hidden bg-gray-50 py-12 md:py-20">
       <Heading
         label="Contact"
@@ -242,5 +257,6 @@ export default function Contact() {
         </motion.div>
       </motion.div>
     </section>
+    </>
   );
 }

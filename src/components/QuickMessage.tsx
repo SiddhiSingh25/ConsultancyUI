@@ -8,6 +8,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { toast } from "react-toastify";
 import AnimatedButton from "./common/AnimatedButton";
+import Alert from "./common/Alert";
 
 /* ---------------- Validation ---------------- */
 const schema = yup.object({
@@ -32,19 +33,31 @@ const QuickMessage = () => {
     resolver: yupResolver(schema),
   });
 
+  const [alert, setAlert] = useState<{ type: "success" | "error"; message: string } | null>(null);
+
   const handleQuickMessage = async (data: any) => {
     try {
       await axios.post("/api/quick-chat", data);
-      toast.success("Message sent successfully");
+      // toast.success("Your message has been sent! We’ll get back to you shortly.");
+       setAlert({ type: "success", message: "Your message has been sent! We’ll get back to you shortly." });
       reset();
       setOpen(false);
     } catch {
-      toast.error("Something went wrong!");
+      // toast.error("⚠️ Oops! Something went wrong. Please try again later.");
+      setAlert({ type: "error", message: "⚠️ Oops! Something went wrong. Please try again later." });
     }
   };
 
   return (
     <>
+       {alert && (
+        <Alert
+          open={!!alert}
+          type={alert.type}
+          message={alert.message}
+          onClose={() => setAlert(null)}
+        />
+      )}
       {/* Floating Chat Button */}
       <button
         onClick={() => setOpen((p) => !p)}

@@ -393,7 +393,7 @@ export default function Navbar() {
                   <Link
                     href={href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`block rounded-lg px-4 py-3 transition ${pathname === href
+                    className={`block bg-primary-900 rounded-lg px-4 py-3 transition ${pathname === href
                         ? "text-secondary-600"
                         : "hover:bg-primary-50 hover:text-primary-900"
                       }`}
