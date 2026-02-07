@@ -62,7 +62,7 @@ export default function Start() {
         <motion.div variants={itemVariants}>
           <Link
             href="/"
-            className="p-4 mt-20 md:mt-32 flex items-center gap-2 border border-primary-800 rounded-full p-1 px-3 text-sm font-medium text-primary family-medium bg-white"
+            className="mt-20 md:mt-32 flex items-center gap-2 border border-primary-800 rounded-full p-1 px-3 text-sm font-medium text-primary family-medium bg-white"
           >
             <span>Unmatched solution of all business problems</span>
           </Link>
