@@ -51,7 +51,7 @@ const QuickMessage = () => {
         className="
           fixed bottom-4 right-4 sm:bottom-6 sm:right-6
           z-50 h-14 w-14 rounded-full
-          bg-gradient-to-tr from-primary-600 to-primary-800
+          bg-gradient-to-tr from-primary-800 to-primary-900
           shadow-2xl hover:scale-110 transition-all duration-300
         "
       >
@@ -83,7 +83,7 @@ const QuickMessage = () => {
             "
           >
             {/* Header */}
-            <div className="bg-gradient-to-r from-primary-600 to-primary-800 text-white px-5 py-4 flex justify-between items-center">
+            <div className="bg-gradient-to-r from-primary-800 to-primary-900 text-white px-5 py-4 flex justify-between items-center">
               <div>
                 <h4 className="font-semibold text-sm sm:text-base">
                   Hi there 👋
