@@ -30,35 +30,7 @@ export const servicesData = [
     description:
       "End-to-end company incorporation services including Private Limited, LLP, Partnership, and Proprietorship.",
   },
-  {
-    id: "foreign-entity-business-setup",
-    icon: FaGlobe,
-    title: "Foreign Entity Business Setup",
-    description:
-      "Expert support for foreign companies and NRIs to set up and operate businesses in India.",
-  },
-  {
-    id: "fema-compliance-services",
-    icon: FaFileInvoiceDollar,
-    title: "FEMA Compliance Services",
-    description:
-      "FEMA compliance, RBI filings, FDI reporting, and cross-border transaction support.",
-  },
-  {
-    id: "company-secretarial-services",
-    icon: FaUserTie,
-    title: "Company Secretarial Services",
-    description:
-      "ROC filings, statutory registers, board resolutions, annual compliances, and governance support.",
-  },
-  {
-    id: "tax-compliance-advisory",
-    icon: FaCalculator,
-    title: "Tax Compliance & Advisory",
-    description:
-      "GST registration & filing, income tax returns, statutory filings, and expert tax advisory.",
-  },
-  {
+    {
     id: "msme-fssai-registration",
     icon: FaCertificate,
     title: "MSME & FSSAI Registration",
@@ -71,6 +43,34 @@ export const servicesData = [
     title: "Bookkeeping & Accounting",
     description:
       "Accurate bookkeeping and accounting services to maintain compliant financial records.",
+  },
+  {
+    id: "foreign-entity-business-setup",
+    icon: FaGlobe,
+    title: "Foreign Entity Business Setup in India",
+    description:
+      "Expert support for foreign companies and NRIs to set up and operate businesses in India.",
+  },
+  {
+    id: "tax-compliance-advisory",
+    icon: FaCalculator,
+    title: "Tax Compliance & Advisory",
+    description:
+      "GST registration & filing, income tax returns, statutory filings, and expert tax advisory.",
+  },
+    {
+    id: "fema-compliance-services",
+    icon: FaFileInvoiceDollar,
+    title: "FEMA Compliance Services",
+    description:
+      "FEMA compliance, RBI filings, FDI reporting, and cross-border transaction support.",
+  },
+  {
+    id: "company-secretarial-services",
+    icon: FaUserTie,
+    title: "Company Secretarial Services",
+    description:
+      "ROC filings, statutory registers, board resolutions, annual compliances, and governance support.",
   },
   {
     id: "payroll-management-services",

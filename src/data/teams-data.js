@@ -1,45 +1,17 @@
 export const teamData = [
-  {
-    id: 1,
-    name: "Vikas Gaur",
-    role: "Partner",
-    image: "/images/teams/vikas_gaur.png",
-    bio: "Chartered Accountant with 15+ years of experience in accounting, taxation, audit, and Ind AS advisory.",
-  },
-  {
+    {
     id: 2,
     name: "Sachin Sharma",
-    role: "Partner",
+    role: "Founder & Managing Partner",
     image: "/images/teams/sachin_sharma.png",
     bio: "Chartered Accountant with 5+ years of experience advising startups and MSMEs on growth and strategy.",
   },
   {
-    id: 3,
-    name: "Prince",
-    role: "Income Tax Head",
-    image: "/images/teams/prince.png",
-    bio: "Chartered Accountant with expertise in insolvency, bankruptcy, and FEMA regulations.",
-  },
-  {
-    id: 4,
-    name: "Laksh Sharma",
-    role: "UK Advisory Head",
-    image: "/images/teams/laksh_sharma.png",
-    bio: "Hospitality industry professional delivering UK-based consultancy and data analytics services.",
-  },
-  {
-    id: 5,
-    name: "Sunit Jaiswal",
-    role: "Accounting Head (Ind AS & IFRS)",
-    image: "/images/teams/sunit_jaiswal.png",
-    bio: "Chartered Accountant with 6+ years of experience providing IFRS advisory and consulting services.",
-  },
-  {
-    id: 6,
-    name: "Anubhav Nath Jha",
-    role: "USA & Canada Advisory Head",
-    image: "/images/teams/anubhav_nath_jha.png",
-    bio: "Professional with expertise in IFRS, UK and US taxation, and accounting services.",
+    id: 1,
+    name: "Vikas Gaur",
+    role: "Senior Partner",
+    image: "/images/teams/vikas_gaur.png",
+    bio: "Chartered Accountant with 15+ years of experience in accounting, taxation, audit, and Ind AS advisory.",
   },
   {
     id: 7,
@@ -61,6 +33,34 @@ export const teamData = [
     role: "Partner",
     image: "/images/teams/ankit_goswami.png",
     bio: "Chartered Accountant specializing in income tax advisory and litigation services.",
+  },
+  {
+    id: 5,
+    name: "Sunit Jaiswal",
+    role: "Partner",
+    image: "/images/teams/sunit_jaiswal.png",
+    bio: "Chartered Accountant with 6+ years of experience providing IFRS advisory and consulting services.",
+  },
+  {
+    id: 3,
+    name: "Prince",
+    role: "Accounting Head (Ind AS & IFRS)",
+    image: "/images/teams/prince.png",
+    bio: "Chartered Accountant with expertise in IFRS and Ind AS.",
+  },
+  {
+    id: 4,
+    name: "Laksh Sharma",
+    role: "UK Advisory Head",
+    image: "/images/teams/laksh_sharma.png",
+    bio: "Hospitality industry professional delivering UK-based consultancy and data analytics services.",
+  },
+  {
+    id: 6,
+    name: "Anubhav Nath Jha",
+    role: "USA & Canada Advisory Head",
+    image: "/images/teams/anubhav_nath_jha.png",
+    bio: "Professional with expertise in IFRS, UK and US taxation, and accounting services.",
   },
 
   // Our Experts (Heads)

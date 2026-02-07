@@ -95,7 +95,7 @@ export default function Start() {
           "
         >
           Unmatched Consultancy helps startups and businesses stay compliant,
-          streamline operations, and grow with confidence, backed by 20+ experts
+          streamline operations, and grow with confidence, backed by experts
           supporting businesses globally.
         </motion.p>
 

@@ -200,7 +200,7 @@ export default function Contact() {
               </label>
               <input
                 {...register("phoneNo")}
-                placeholder="9876543210"
+                placeholder="9876XXXXXX"
                 className="w-full rounded-lg border border-slate-300 px-4 py-3 text-sm focus:border-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-600/20"
               />
               {errors.phoneNo && (
