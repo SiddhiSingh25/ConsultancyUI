@@ -61,7 +61,7 @@ export default function Team({ limit }: TeamProps) {
       variants={sectionVariants}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.1 }}
     >
       {/* Heading */}
       <Heading
