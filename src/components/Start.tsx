@@ -62,7 +62,7 @@ export default function Start() {
         <motion.div variants={itemVariants}>
           <Link
             href="/"
-            className="px-4 md:px-16 lg:px-24 mt-20 md:mt-32 flex items-center gap-2 border border-primary-800 rounded-full p-1 px-3 text-sm font-medium text-primary family-medium bg-white"
+            className="p-4 mt-20 md:mt-32 flex items-center gap-2 border border-primary-800 rounded-full p-1 px-3 text-sm font-medium text-primary family-medium bg-white"
           >
             <span>Unmatched solution of all business problems</span>
           </Link>
@@ -72,7 +72,7 @@ export default function Start() {
         <motion.h1
           variants={itemVariants}
           className="
-            mx-auto mt-6 max-w-5xl text-center
+            px-4 md:px-16 lg:px-24 mt-6 max-w-5xl text-center
             text-3xl leading-snug
             sm:text-4xl sm:leading-tight
             md:text-6xl md:leading-[80px]
