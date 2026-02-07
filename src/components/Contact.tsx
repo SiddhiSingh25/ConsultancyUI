@@ -113,7 +113,7 @@ export default function Contact() {
               <img src="/images/about/user-3.png" className="h-7 w-7 -translate-x-4 rounded-full border border-primary-900" />
             </div>
             <span className="-translate-x-2 text-primary-900">
-              Trusted by 20+ businesses
+              Trusted by 5k+ businesses
             </span>
           </div>
 

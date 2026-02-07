@@ -288,15 +288,6 @@ export default function Navbar() {
           </a>
         </p>
 
-        {/* <div className="hidden md:flex items-center gap-2">
-          {[IoLogoLinkedin, MdOutlineMailOutline, FaXTwitter, FaInstagram].map(
-            (Icon, i) => (
-              <Link key={i} href="/">
-                <Icon className="text-secondary-500 text-lg ml-1 hover:text-secondary-600 transition active:scale-95" />
-              </Link>
-            )
-          )}
-        </div> */}
         <div className="hidden md:flex items-center gap-2">
           {[
             { icon: IoLogoLinkedin, href: "https://www.linkedin.com/company/unmatchedconsultancy/" },
