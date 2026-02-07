@@ -29,7 +29,7 @@ export async function POST(req: Request) {
 
     // 3️⃣ Append row
     const response = await sheets.spreadsheets.values.append({
-      spreadsheetId: process.env.GOOGLE_CONTACT_FORM_SHEET_ID!,
+      spreadsheetId: process.env.GOOGLE_QUICK_CHAT_SHEET_ID!,
       range: "A1:D1",
       valueInputOption: "USER_ENTERED",
       requestBody: {
