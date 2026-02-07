@@ -54,7 +54,7 @@ export default function Services({ limit }: ServiceProp) {
       variants={sectionVariants}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: 0.25 }}
+      viewport={{ once: true, amount: 0.1 }}
     >
       {/* Heading */}
       <motion.div variants={cardVariants}>
@@ -71,7 +71,7 @@ export default function Services({ limit }: ServiceProp) {
         variants={containerVariants}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.1 }}
       >
         {visibleServices.map((service) => (
           <motion.div key={service.id} variants={cardVariants}>
