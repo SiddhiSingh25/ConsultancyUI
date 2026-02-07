@@ -288,7 +288,7 @@ export default function Navbar() {
           </a>
         </p>
 
-        <div className="hidden md:flex items-center gap-2">
+        {/* <div className="hidden md:flex items-center gap-2">
           {[IoLogoLinkedin, MdOutlineMailOutline, FaXTwitter, FaInstagram].map(
             (Icon, i) => (
               <Link key={i} href="/">
@@ -296,6 +296,18 @@ export default function Navbar() {
               </Link>
             )
           )}
+        </div> */}
+        <div className="hidden md:flex items-center gap-2">
+          {[
+            { icon: IoLogoLinkedin, href: "https://www.linkedin.com/company/unmatchedconsultancy/" },
+            { icon: MdOutlineMailOutline, href: "mailto:unmatchedconsultancy@gmail.com" },
+            { icon: FaXTwitter, href: "https://twitter.com/yourhandle" },
+            { icon: FaInstagram, href: "https://instagram.com/yourhandle" },
+          ].map(({ icon: Icon, href }, i) => (
+            <Link key={i} href={href} target="_blank" rel="noopener noreferrer">
+              <Icon className="text-secondary-500 text-lg ml-1 hover:text-secondary-600 transition active:scale-95" />
+            </Link>
+          ))}
         </div>
       </motion.div>
 
@@ -328,11 +340,10 @@ export default function Navbar() {
                 <li key={label} className="relative group">
                   <Link
                     href={href}
-                    className={`transition ${
-                      isActive
+                    className={`transition ${isActive
                         ? "text-secondary-600" // golden for active
                         : "text-gray-700 hover:text-secondary-600"
-                    }`}
+                      }`}
                   >
                     {label}
                   </Link>
@@ -391,11 +402,10 @@ export default function Navbar() {
                   <Link
                     href={href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`block rounded-lg px-4 py-3 transition ${
-                      pathname === href
+                    className={`block rounded-lg px-4 py-3 transition ${pathname === href
                         ? "text-secondary-600"
                         : "hover:bg-primary-50 hover:text-primary-900"
-                    }`}
+                      }`}
                   >
                     {label}
                   </Link>
