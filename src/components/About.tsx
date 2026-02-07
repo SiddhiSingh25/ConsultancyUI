@@ -5,6 +5,7 @@ import Heading from "./common/Heading";
 import { usePathname } from "next/navigation";
 import Button from "./common/Button";
 import { motion, type Variants } from "framer-motion";
+import { toast } from "react-toastify";
 
 /* ------------------ Animations ------------------ */
 

@@ -35,7 +35,7 @@ const QuickMessage = () => {
   const handleQuickMessage = async (data: any) => {
     try {
       await axios.post("/api/quick-chat", data);
-      toast.success("Message sent successfully ✨");
+      toast.success("Message sent successfully");
       reset();
       setOpen(false);
     } catch {

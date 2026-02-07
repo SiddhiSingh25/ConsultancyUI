@@ -1,9 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-
-
-  --color-primary-50:  #f2f5fa;
+  --color-primary-50: #f2f5fa;
   --color-primary-100: #e1e7f1;
   --color-primary-200: #c3cfe4;
   --color-primary-300: #9fb0d3;
@@ -11,13 +9,11 @@
   --color-primary-500: #4a649f;
   --color-primary-600: #364d84;
   --color-primary-700: #2b3f6c;
-  --color-primary-800: #20385c; /* your base color */
+  --color-primary-800: #20385c; /* base color */
   --color-primary-900: #162744;
   --color-primary-950: #0f1b37;
 
-
-
-    --color-secondary-50:  #fdf7ef;
+  --color-secondary-50: #fdf7ef;
   --color-secondary-100: #f8e9d1;
   --color-secondary-200: #f2d6a8;
   --color-secondary-300: #ebc07d;
@@ -28,12 +24,9 @@
   --color-secondary-800: #895822;
   --color-secondary-900: #6d431b;
   --color-secondary-950: #523116;
- 
 }
 
-
 body {
-  /* @apply font-sans antialiased; */
   font-family: "Regular", sans-serif;
 }
 
@@ -130,14 +123,7 @@ body {
   font-family: "Light", sans-serif;
 }
 
-
-/* .font-normal {
-  font-family: "Normal", sans-serif;
-} */
-
-
 /* quick chat animation */
-
 
 @keyframes chatOpen {
   from {
@@ -156,9 +142,11 @@ body {
 
 /* toast message */
 
-.blue-toast {
-  background: #f9fafb !important;
-  border: 2px solid #162744;
-  color: #162744;
-  border-radius: 8px;
+/* Change success icon color */
+.Toastify__toast-icon svg {
+  fill: #162744;
+}
+
+:root {
+  --toastify-color-success: #162744;
 }

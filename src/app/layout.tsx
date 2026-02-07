@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
+import "react-toastify/dist/ReactToastify.css";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import QuickMessage from "@/components/QuickMessage";
 import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+
+
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -36,7 +38,6 @@ export default function RootLayout({
           newestOnTop
           closeOnClick
           pauseOnHover
-          toastClassName="blue-toast"
         />
 
         <Footer />
