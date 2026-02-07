@@ -139,7 +139,8 @@ export default function Team({ limit }: TeamProps) {
     "
               >
                 <Link
-                  href="/"
+                  href="https://www.linkedin.com/company/unmatchedconsultancy/"
+                  target="_blank"
                   aria-label="LinkedIn"
                   className="
         flex h-9 w-9 items-center justify-center
@@ -154,7 +155,8 @@ export default function Team({ limit }: TeamProps) {
                 </Link>
 
                 <Link
-                  href="/"
+                  href="mailto:unmatchedconsultancy@gmail.com"
+                  target="_blank"
                   aria-label="Email"
                   className="
         flex h-9 w-9 items-center justify-center
