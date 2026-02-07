@@ -46,7 +46,7 @@ export const teamData = [
     name: "Prince",
     role: "Accounting Head (Ind AS & IFRS)",
     image: "/images/teams/prince.png",
-    bio: "Chartered Accountant with expertise in IFRS and Ind AS.",
+    bio: "Chartered Accountant 6+ years of experience having expertise in IFRS and Ind AS.",
   },
   {
     id: 4,
@@ -77,7 +77,7 @@ export const teamData = [
     name: "Abhishek Dubey",
     role: "Indirect Tax (IDT) Head",
     image: "/images/teams/abhishek_dubey.png",
-    bio: "Professional with strong expertise in indirect taxation services.",
+    bio: "Professional with 5+ yearS of experience having experties in indirect taxation services.",
   },
   {
     id: 12,

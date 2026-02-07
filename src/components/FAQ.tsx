@@ -9,7 +9,7 @@ const FaqSection = () => {
 
   const faqs = [
     {
-      question: "What services does Unlimited Consultancy provide?",
+      question: "What services does Unmatched Consultancy provide?",
       answer:
         "We offer expert services in Taxation, Accounting & Bookkeeping, Audit & Assurance, Business Advisory, and Regulatory Compliance tailored for businesses and individuals.",
     },
