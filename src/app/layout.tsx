@@ -36,6 +36,7 @@ export default function RootLayout({
           newestOnTop
           closeOnClick
           pauseOnHover
+          toastClassName="blue-toast"
         />
 
         <Footer />
